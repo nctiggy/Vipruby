@@ -1,5 +1,6 @@
 require 'rest_client'
 require 'nokogiri'
+require 'json'
 
 # Adding to_hash method to Nokogiri class 
 class Nokogiri::XML::Node
@@ -49,11 +50,20 @@ class Vipruby
   end
   
   def add_host(host)
-     RestClient::Request.execute(method: :get,url: "#{base_url}/tenants/#{@tenant_uid}/hosts",ssl_version: SSL_VERSION,payload: host)
-     self.add_initiators()
+    puts host
+    puts "#{base_url}/tenants/#{@tenant_uid}/hosts"
+     RestClient::Request.execute(method: :post,
+       url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
+       ssl_version: SSL_VERSION,
+       payload: host,
+       headers: {
+         :'X-SDS-AUTH-TOKEN' => @auth_token,
+         :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
+         content_type: 'application/json'
+       })
   end
   
-  def add_initiators
+  def add_initiators(host)
     
   end
   
@@ -73,15 +83,15 @@ class Host
     params.each { |key, value| send "#{key}=", value }
   end
   
-  def generate_xml
-    Nokogiri::XML::Builder.new do |xml|
-      xml.host_create {
-        xml.type @type
-        xml.name @name
-        xml.host_name @fqdn
-        xml.discoverable @discoverable
-      }
-    end
+  def generate_json
+    {
+      type: @type,
+      name: @name,
+      host_name: @fqdn,
+      discoverable: @discoverable,
+      user_name: "test",
+      password: "test"
+    }.to_json
   end
   
 end
