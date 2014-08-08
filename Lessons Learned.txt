@@ -1,0 +1,6 @@
+ViPR Lessons learned:
+
+1. It does accept JSON even though the docs have XML examples
+2. It does return JSON
+3. Certain fields are case sensitive, have accounted for that in the calls
+4. 

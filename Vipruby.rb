@@ -26,10 +26,10 @@ class Vipruby
   def initialize(base_url,proxy_token,user_name,password)
     #add condition later for trusted certs (This ignores)
     #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-    self.proxy_token = proxy_token
-    self.base_url = base_url
-    self.auth_token = get_auth_token(user_name,password)
-    self.tenant_uid = get_tenant_uid
+    @proxy_token = proxy_token
+    @base_url = base_url
+    @auth_token = get_auth_token(user_name,password)
+    @tenant_uid = get_tenant_uid
   end
   
   def get_tenant_uid
@@ -50,9 +50,7 @@ class Vipruby
   end
   
   def add_host(host)
-    puts host
-    puts "#{base_url}/tenants/#{@tenant_uid}/hosts"
-     RestClient::Request.execute(method: :post,
+     Nokogiri::XML(RestClient::Request.execute(method: :post,
        url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
        ssl_version: SSL_VERSION,
        payload: host,
@@ -60,14 +58,29 @@ class Vipruby
          :'X-SDS-AUTH-TOKEN' => @auth_token,
          :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
          content_type: 'application/json'
-       })
+       })).to_hash[:kids][5][:text]
   end
   
-  def add_initiators(host)
-    
+  def add_initiators(initiators,host_urn)
+    puts initiators
+    initiators.each do |initiator|
+      puts initiator
+      Nokogiri::XML(RestClient::Request.execute(method: :post,
+        url: "#{base_url}/compute/hosts/#{host_urn}/initiators",
+        ssl_version: SSL_VERSION,
+        payload: initiator,
+        headers: {
+          :'X-SDS-AUTH-TOKEN' => @auth_token,
+          :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
+          content_type: 'application/json'
+        })).to_hash
+    end
   end
   
-  
+  def add_host_and_initiators(host)
+    host_urn = add_host(host.generate_json)
+    add_initiators(host.generate_initiators_json,host_urn)
+  end
   
   def self.getHost(uid)
     
@@ -77,7 +90,7 @@ class Vipruby
 end
 
 class Host
-  attr_accessor :fqdn, :ip_address, :type, :name, :discoverable, :initiators
+  attr_accessor :fqdn, :ip_address, :type, :name, :discoverable, :initiators, :protocol
   
   def initialize params = {}
     params.each { |key, value| send "#{key}=", value }
@@ -85,13 +98,25 @@ class Host
   
   def generate_json
     {
-      type: @type,
+      type: @type.capitalize,
       name: @name,
       host_name: @fqdn,
-      discoverable: @discoverable,
+      discoverable: @discoverable.downcase,
       user_name: "test",
       password: "test"
     }.to_json
+  end
+  
+  def generate_initiators_json
+    initiator_json = []
+    @initiators.each do |initiator|
+      initiator_json <<
+      {
+        protocol: @protocol.upcase,
+        initiator_port: @initiator
+      }.to_json
+    end
+    initiator_json
   end
   
 end
