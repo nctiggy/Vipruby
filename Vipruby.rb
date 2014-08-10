@@ -58,11 +58,12 @@ class Vipruby
          :'X-SDS-AUTH-TOKEN' => @auth_token,
          :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
          content_type: 'application/json'
-       })).to_hash[:kids][5][:text]
+       })).to_hash[:kids][5][:kids][0][:text]
   end
   
   def add_initiators(initiators,host_urn)
     puts initiators
+    puts host_urn
     initiators.each do |initiator|
       puts initiator
       Nokogiri::XML(RestClient::Request.execute(method: :post,
@@ -82,15 +83,27 @@ class Vipruby
     add_initiators(host.generate_initiators_json,host_urn)
   end
   
-  def self.getHost(uid)
-    
+  def host_exists?(hostname)
+    find_vipr_object({name: hostname})
+  end
+  
+  def find_vipr_object(search_hash)
+    Nokogiri::XML(RestClient::Request.execute(method: :get,
+      url: "#{base_url}/compute/hosts/search",
+      ssl_version: SSL_VERSION,
+      payload: search_hash.to_json,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
+        content_type: 'application/json'
+      })).to_hash
   end
   
   private :login, :get_auth_token, :get_tenant_uid
 end
 
 class Host
-  attr_accessor :fqdn, :ip_address, :type, :name, :discoverable, :initiators, :protocol
+  attr_accessor :fqdn, :ip_address, :type, :name, :discoverable, :initiators_port, :initiator_node, :protocol
   
   def initialize params = {}
     params.each { |key, value| send "#{key}=", value }
@@ -109,11 +122,12 @@ class Host
   
   def generate_initiators_json
     initiator_json = []
-    @initiators.each do |initiator|
+    @initiators_port.each do |initiator|
       initiator_json <<
       {
         protocol: @protocol.upcase,
-        initiator_port: @initiator
+        initiator_port: initiator,
+        initiator_node: @initiator_node
       }.to_json
     end
     initiator_json
