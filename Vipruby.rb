@@ -113,10 +113,7 @@ class Host
     {
       type: @type.capitalize,
       name: @name,
-      host_name: @fqdn,
-      discoverable: @discoverable.downcase,
-      user_name: "test",
-      password: "test"
+      host_name: @fqdn
     }.to_json
   end
   
