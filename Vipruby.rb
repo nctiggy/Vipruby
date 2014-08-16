@@ -78,6 +78,16 @@ class Vipruby
     end
   end
   
+  def get_hosts
+    RestClient::Request.execute(method: :get,url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
+      ssl_version: SSL_VERSION,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token, 
+        :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
+        accept: :json
+      })
+  end
+  
   def add_host_and_initiators(host)
     host_urn = add_host(host.generate_json)
     add_initiators(host.generate_initiators_json,host_urn)
