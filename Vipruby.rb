@@ -1,44 +1,25 @@
 require 'rest_client'
-require 'nokogiri'
 require 'json'
 
-# Adding to_hash method to Nokogiri class 
-class Nokogiri::XML::Node
-  TYPENAMES = {1=>'element',2=>'attribute',3=>'text',4=>'cdata',8=>'comment'}
-  def to_hash
-    {kind:TYPENAMES[node_type],name:name}.tap do |h|
-      h.merge! nshref:namespace.href, nsprefix:namespace.prefix if namespace
-      h.merge! text:text
-      h.merge! attr:attribute_nodes.map(&:to_hash) if element?
-      h.merge! kids:children.map(&:to_hash) if element?
-    end
-  end
-end
-
-class Nokogiri::XML::Document
-  def to_hash; root.to_hash; end
-end
-
 class Vipruby
-  attr_accessor :tenant_uid, :proxy_token, :auth_token, :base_url
+  attr_accessor :tenant_uid, :auth_token, :base_url
   SSL_VERSION = 'TLSv1'
   
-  def initialize(base_url,proxy_token,user_name,password)
+  def initialize(base_url,user_name,password)
     #add condition later for trusted certs (This ignores)
     #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-    @proxy_token = proxy_token
     @base_url = base_url
     @auth_token = get_auth_token(user_name,password)
-    @tenant_uid = get_tenant_uid
+    @tenant_uid = get_tenant_uid['id']
   end
   
   def get_tenant_uid
-    Nokogiri::XML(RestClient::Request.execute(method: :get,url: "#{base_url}/tenant",
-      headers: {:'X-SDS-AUTH-TOKEN' => @auth_token, 
-        :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token
+    JSON.parse(RestClient::Request.execute(method: :get,url: "#{base_url}/tenant",
+      headers: {:'X-SDS-AUTH-TOKEN' => @auth_token,
+        accept: :json
       },
       ssl_version: SSL_VERSION
-      )).to_hash[:kids][2][:text]
+      ))
   end
   
   def login(user_name,password)
@@ -50,31 +31,28 @@ class Vipruby
   end
   
   def add_host(host)
-     Nokogiri::XML(RestClient::Request.execute(method: :post,
+     RestClient::Request.execute(method: :post,
        url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
        ssl_version: SSL_VERSION,
        payload: host,
        headers: {
          :'X-SDS-AUTH-TOKEN' => @auth_token,
-         :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
-         content_type: 'application/json'
-       })).to_hash[:kids][5][:kids][0][:text]
+         content_type: 'application/json',
+         accept: :json
+       })
   end
   
-  def add_initiators(initiators,host_urn)
-    puts initiators
-    puts host_urn
+  def add_initiators(initiators,host_href)
     initiators.each do |initiator|
-      puts initiator
-      Nokogiri::XML(RestClient::Request.execute(method: :post,
-        url: "#{base_url}/compute/hosts/#{host_urn}/initiators",
+      RestClient::Request.execute(method: :post,
+        url: "#{base_url}#{host_href}/initiators",
         ssl_version: SSL_VERSION,
         payload: initiator,
         headers: {
           :'X-SDS-AUTH-TOKEN' => @auth_token,
-          :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
-          content_type: 'application/json'
-        })).to_hash
+          content_type: 'application/json',
+          accept: :json
+        })
     end
   end
   
@@ -82,31 +60,28 @@ class Vipruby
     RestClient::Request.execute(method: :get,url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
       ssl_version: SSL_VERSION,
       headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token, 
-        :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
         accept: :json
       })
   end
   
   def add_host_and_initiators(host)
-    host_urn = add_host(host.generate_json)
-    add_initiators(host.generate_initiators_json,host_urn)
+    new_host = JSON.parse(add_host(host.generate_json))
+    add_initiators(host.generate_initiators_json,new_host['resource']['link']['href'])
   end
   
   def host_exists?(hostname)
-    find_vipr_object({name: hostname})
+    JSON.parse(find_vipr_object(hostname))['resource'].any?
   end
   
   def find_vipr_object(search_hash)
-    Nokogiri::XML(RestClient::Request.execute(method: :get,
-      url: "#{base_url}/compute/hosts/search",
+    RestClient::Request.execute(method: :get,
+      url: "#{base_url}/compute/hosts/search?name=#{search_hash}",
       ssl_version: SSL_VERSION,
-      payload: search_hash.to_json,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
-        :'X-SDS-AUTH-PROXY-TOKEN' => @proxy_token,
-        content_type: 'application/json'
-      })).to_hash
+        accept: :json
+      })
   end
   
   private :login, :get_auth_token, :get_tenant_uid
@@ -123,7 +98,8 @@ class Host
     {
       type: @type.capitalize,
       name: @name,
-      host_name: @fqdn
+      host_name: @fqdn,
+      discoverable: @discoverable.downcase
     }.to_json
   end
   
