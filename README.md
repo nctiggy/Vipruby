@@ -4,7 +4,9 @@ Vipruby
 Ruby Library for ViPR
 
 
-require_relative 'Vipruby'
+gem install vipruby
+
+require 'vipruby'
 
 
 example files:
