@@ -1,29 +1,29 @@
-require 'rest_client'
+require 'rest-client'
 require 'json'
 
 class Vipruby
-  attr_accessor :tenant_uid, :auth_token, :base_url
+  attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
   SSL_VERSION = 'TLSv1'
   
-  def initialize(base_url,user_name,password)
+  def initialize(base_url,user_name,password,verify_cert)
     #add condition later for trusted certs (This ignores)
-    #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     @base_url = base_url
+    @verify_cert = to_boolean(verify_cert)
     @auth_token = get_auth_token(user_name,password)
     @tenant_uid = get_tenant_uid['id']
   end
   
   def get_tenant_uid
-    JSON.parse(RestClient::Request.execute(method: :get,url: "#{base_url}/tenant",
+    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/tenant",
       headers: {:'X-SDS-AUTH-TOKEN' => @auth_token,
         accept: :json
       },
-      ssl_version: SSL_VERSION
+      verify_ssl: @verify_cert
       ))
   end
   
   def login(user_name,password)
-    RestClient::Request.execute(method: :get,url: "#{base_url}/login", user: user_name, password: password,ssl_version: SSL_VERSION)
+    RestClient::Request.execute(method: :get,url: "#{@base_url}/login", user: user_name, password: password,verify_ssl: FALSE)
   end
   
   def get_auth_token(user_name,password)
@@ -45,7 +45,7 @@ class Vipruby
   def add_initiators(initiators,host_href)
     initiators.each do |initiator|
       RestClient::Request.execute(method: :post,
-        url: "#{base_url}#{host_href}/initiators",
+        url: "#{@base_url}#{host_href}/initiators",
         ssl_version: SSL_VERSION,
         payload: initiator,
         headers: {
@@ -57,7 +57,7 @@ class Vipruby
   end
   
   def get_hosts
-    RestClient::Request.execute(method: :get,url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
+    RestClient::Request.execute(method: :get,url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
       ssl_version: SSL_VERSION,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
@@ -74,9 +74,9 @@ class Vipruby
     JSON.parse(find_vipr_object(hostname))['resource'].any?
   end
   
-  def find_vipr_object(search_hash)
+  def find_host_object(search_hash)
     RestClient::Request.execute(method: :get,
-      url: "#{base_url}/compute/hosts/search?name=#{search_hash}",
+      url: "#{@base_url}/compute/hosts/search?name=#{search_hash}",
       ssl_version: SSL_VERSION,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
@@ -84,7 +84,11 @@ class Vipruby
       })
   end
   
-  private :login, :get_auth_token, :get_tenant_uid
+  def to_boolean(str)
+    str.downcase == 'true'
+  end
+  
+  private :login, :get_auth_token, :get_tenant_uid, :to_boolean
 end
 
 class Host
