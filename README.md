@@ -17,8 +17,8 @@ require 'vipruby'
 ####Create a host object:
 	host = Host.new(type: 'other',name: [name],fqdn: [fqdn],initiator_node: [wwnn],initiators_port: ['WWPN1','WWPN2'],protocol: [fc/iscsi],discoverable: [true/false])
 
-####Methods:
--vipr.add_host  
--vipr.add_initiators  
--vipr.add_host_and_initators  
--vipr.host_exists?  
+####Methods that matter:
+vipr.add_host(*hostObject*)  
+vipr.add_initiators(*hostObject*,*host_href*)  
+vipr.add_host_and_initators(*hostObject*)  
+vipr.host_exists?(*host_name*)  
