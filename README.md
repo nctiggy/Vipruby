@@ -21,4 +21,4 @@ require 'vipruby'
 vipr.add_host(*hostObject.generate_json*)  
 vipr.add_initiators(*hostObject.generate_initiators_json*,*host_href*)  
 vipr.add_host_and_initators(*hostObject*)  
-vipr.host_exists?(*host.name*)  
+vipr.host_exists?(*hostObject.name*)  
