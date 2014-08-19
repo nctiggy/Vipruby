@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'vipruby'
-  s.version     = '0.0.3'
-  s.date        = '2014-08-17'
+  s.version     = '0.1.0'
+  s.date        = '2014-08-19'
   s.summary     = "A Ruby Library for EMC's ViPR"
   s.description = "Currently limited to host and initiator add functions"
   s.authors     = ["Craig J Smith"]

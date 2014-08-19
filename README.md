@@ -1,4 +1,4 @@
-#Vipruby 0.0.2
+#Vipruby 0.1.0
 Ruby Library for ViPR  
 
 ####Install and usage:
