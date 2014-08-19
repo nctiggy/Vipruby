@@ -3,28 +3,26 @@ Vipruby
 
 Ruby Library for ViPR
 
-
-gem install vipruby
-
-require 'vipruby'
-
-
-example files:
-
-SBUX.rb
-
-settings.conf
+Install and usage:
+***
+-gem install vipruby
+-require 'vipruby'
 
 
-vipr = Vipruby.new([base_url]:[port],[user],[password])
+Example usage files:
+***
+-SBUX.rb
+-settings.conf
+
+
+Create an vipr object:
+***
+    vipr = Vipruby.new([base_url]:[port],[user],[password])
 
 
 Methods:
-
-vipr.add_host
-
-vipr.add_initiators
-
-vipr.add_host_and_initators
-
-vipr.host_exists?
+***
+-vipr.add_host
+-vipr.add_initiators
+-vipr.add_host_and_initators
+-vipr.host_exists?
