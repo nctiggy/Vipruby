@@ -1,5 +1,4 @@
 #Vipruby
-=======
 Ruby Library for ViPR  
 
 ####Install and usage:
