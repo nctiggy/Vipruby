@@ -3,6 +3,7 @@ Ruby Library for ViPR
 
 ####Install and usage:
     gem install vipruby  
+
     require 'vipruby'  
 
 
