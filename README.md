@@ -2,9 +2,8 @@
 Ruby Library for ViPR  
 
 ####Install and usage:
-    gem install vipruby  
-======
-    require 'vipruby'  
+gem install vipruby  
+require 'vipruby'  
 
 
 ####Example usage files:
