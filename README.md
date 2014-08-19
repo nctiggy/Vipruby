@@ -15,7 +15,7 @@ require 'vipruby'
     vipr = Vipruby.new([base_url]:[port],[user],[password])
 
 ####Create a host object:
-	host = Host.new(type: 'other',name: [name],fqdn: [fqdn],initiator_node: [wwnn],initiators_port: ['WWPN1','WWPN2'],protocol: [proto],discoverable: [true/false])
+	host = Host.new(type: 'other',name: [name],fqdn: [fqdn],initiator_node: [wwnn],initiators_port: ['WWPN1','WWPN2'],protocol: [fc/iscsi],discoverable: [true/false])
 
 ####Methods:
 -vipr.add_host  
