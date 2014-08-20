@@ -70,7 +70,25 @@ class Vipruby
         accept: :json
       }))
   end
-  
+
+  def get_all_vcenters
+    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/compute/vcenters/bulk",
+      verify_ssl: @verify_cert,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        accept: :json
+      }))
+  end
+
+  def find_vcenter_object(vcenter_search_hash)
+    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}",
+      verify_ssl: @verify_cert,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        accept: :json
+      }))
+  end
+
   def add_host_and_initiators(host)
     new_host = add_host(host.generate_json)
     add_initiators(host.generate_initiators_json,new_host['resource']['link']['href'])
@@ -91,7 +109,7 @@ class Vipruby
   end
   
   def to_boolean(str)
-    str.downcase == 'true'
+    #str.downcase == 'true'
   end
   
   private :login, :get_auth_token, :get_tenant_uid, :to_boolean
@@ -127,3 +145,19 @@ class Host
   end
   
 end
+
+base_url = 'https://192.168.50.141:4443'
+port = '4443'
+user_name = 'root'
+password = 'u1805003'
+verify_cert = false
+
+vipr = Vipruby.new(base_url,user_name,password,verify_cert)
+puts "success"
+
+#puts vipr.get_hosts
+
+#vcenter_id = vipr.get_all_vcenters['id'][0]
+#puts vipr.get_vcenter(vcenter_id)
+puts vipr.find_vcenter_object("kcv")
+puts vipr.find_host_object("esxi01")
