@@ -3,10 +3,9 @@ require 'json'
 
 class Vipruby
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
-  SSL_VERSION = 'TLSv1'
+  #SSL_VERSION = 'TLSv1'
   
   def initialize(base_url,user_name,password,verify_cert)
-    #add condition later for trusted certs (This ignores)
     @base_url = base_url
     @verify_cert = to_boolean(verify_cert)
     @auth_token = get_auth_token(user_name,password)
@@ -62,8 +61,9 @@ class Vipruby
     end
   end
   
-  def get_hosts
-    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
+  def get_all_hosts
+    JSON.parse(RestClient::Request.execute(method: :get,
+      url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
       verify_ssl: @verify_cert,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
@@ -71,9 +71,30 @@ class Vipruby
       }))
   end
   
+  def get_host(host_href)
+    JSON.parse(RestClient::Request.execute(method: :get,
+      url: "#{base_url}#{host_href}",
+      verify_ssl: @verify_cert,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        content_type: 'application/json',
+        accept: :json
+      }))
+  end
+  
+  def deactivate_host(host_href)
+    JSON.parse(RestClient::Request.execute(method: :post,
+      url: "#{base_url}#{host_href}/deactivate",
+      verify_ssl: @verify_cert,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        content_type: 'application/json',
+        accept: :json
+      }))
+  end
+  
   def add_host_and_initiators(host)
-    new_host = add_host(host.generate_json)
-    add_initiators(host.generate_initiators_json,new_host['resource']['link']['href'])
+    add_initiators(host.generate_initiators_json,add_host(host.generate_json)['resource']['link']['href'])
   end
   
   def host_exists?(hostname)
@@ -91,7 +112,7 @@ class Vipruby
   end
   
   def to_boolean(str)
-    str.downcase == 'true'
+    str.to_s.downcase == "true"
   end
   
   private :login, :get_auth_token, :get_tenant_uid, :to_boolean
