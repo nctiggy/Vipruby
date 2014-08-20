@@ -26,6 +26,7 @@ vipr.host_exists?(*hostObject.name*)
 vipr.find_host_object(*hostObject.name*)
 vipr.get_all_hosts  
 vipr.get_host(*host_href*)  
+vipr.get_all_hosts  
 vipr.deactivate_host(*host_href*)  
 
 ####Fun facts
