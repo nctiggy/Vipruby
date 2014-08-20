@@ -77,7 +77,7 @@ class Vipruby
   end
   
   def host_exists?(hostname)
-    JSON.parse(find_vipr_object(hostname))['resource'].any?
+    find_host_object(hostname)['resource'].any?
   end
   
   def find_host_object(search_hash)
