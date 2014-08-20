@@ -14,7 +14,8 @@ class Vipruby
   end
   
   def get_tenant_uid
-    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/tenant",
+    JSON.parse(RestClient::Request.execute(method: :get,
+      url: "#{@base_url}/tenant",
       headers: {:'X-SDS-AUTH-TOKEN' => @auth_token,
         accept: :json
       },
@@ -23,7 +24,12 @@ class Vipruby
   end
   
   def login(user_name,password)
-    RestClient::Request.execute(method: :get,url: "#{@base_url}/login", user: user_name, password: password,verify_ssl: FALSE)
+    RestClient::Request.execute(method: :get,
+      url: "#{@base_url}/login",
+      user: user_name,
+      password: password,
+      verify_ssl: @verify_cert
+    )
   end
   
   def get_auth_token(user_name,password)
@@ -31,22 +37,22 @@ class Vipruby
   end
   
   def add_host(host)
-     RestClient::Request.execute(method: :post,
+     JSON.parse(RestClient::Request.execute(method: :post,
        url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
-       ssl_version: SSL_VERSION,
+       verify_ssl: @verify_cert,
        payload: host,
        headers: {
          :'X-SDS-AUTH-TOKEN' => @auth_token,
          content_type: 'application/json',
          accept: :json
-       })
+       }))
   end
   
   def add_initiators(initiators,host_href)
     initiators.each do |initiator|
       RestClient::Request.execute(method: :post,
         url: "#{@base_url}#{host_href}/initiators",
-        ssl_version: SSL_VERSION,
+        verify_ssl: @verify_cert,
         payload: initiator,
         headers: {
           :'X-SDS-AUTH-TOKEN' => @auth_token,
@@ -57,16 +63,16 @@ class Vipruby
   end
   
   def get_hosts
-    RestClient::Request.execute(method: :get,url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
-      ssl_version: SSL_VERSION,
+    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
+      verify_ssl: @verify_cert,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
         accept: :json
-      })
+      }))
   end
   
   def add_host_and_initiators(host)
-    new_host = JSON.parse(add_host(host.generate_json))
+    new_host = add_host(host.generate_json)
     add_initiators(host.generate_initiators_json,new_host['resource']['link']['href'])
   end
   
@@ -75,13 +81,13 @@ class Vipruby
   end
   
   def find_host_object(search_hash)
-    RestClient::Request.execute(method: :get,
+    JSON.parse(RestClient::Request.execute(method: :get,
       url: "#{@base_url}/compute/hosts/search?name=#{search_hash}",
-      ssl_version: SSL_VERSION,
+      verify_ssl: @verify_cert,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
         accept: :json
-      })
+      }))
   end
   
   def to_boolean(str)
