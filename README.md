@@ -1,6 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/vipruby.svg)](http://badge.fury.io/rb/vipruby)  
 #Vipruby 0.1.3
-=======
 Ruby Library for ViPR  
 
 ####Install and usage:
