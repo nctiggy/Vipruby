@@ -1,5 +1,6 @@
 require 'rest-client'
 require 'json'
+require 'nokogiri'
 
 class Vipruby
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
@@ -93,24 +94,6 @@ class Vipruby
       }))
   end
 
-  def get_all_vcenters
-    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/compute/vcenters/bulk",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      }))
-  end
-
-  def find_vcenter_object(vcenter_search_hash)
-    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      }))
-  end
-
   def add_host_and_initiators(host)
     add_initiators(host.generate_initiators_json,add_host(host.generate_json)['resource']['link']['href'])
   end
@@ -129,12 +112,285 @@ class Vipruby
       }))
   end
   
+  def get_all_vcenters
+    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/compute/vcenters/bulk",
+      verify_ssl: @verify_cert,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        accept: :json
+      }))
+  end
+
+  def find_vcenter_object(vcenter_search_hash)
+    JSON.parse(RestClient::Request.execute(method: :get,
+      url: "#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}",
+      verify_ssl: @verify_cert,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        accept: :json
+      }))
+  end
+  
+  def add_vcenter(fqdn_or_ip, name, port, user_name, password)
+    vcenterxml = Nokogiri::XML::Builder.new do |xml|
+      xml.vcenter_create {
+        xml.ip_address  fqdn_or_ip
+        xml.name        name
+        xml.port_number port
+        xml.user_name   user_name
+        xml.password    password
+      }
+    end
+
+    JSON.parse(RestClient::Request.execute(method: :post,
+       url: "#{base_url}/tenants/#{@tenant_uid}/vcenters",
+       verify_ssl: @verify_cert,
+       payload: vcenterxml.to_xml,
+       headers: {
+         :'X-SDS-AUTH-TOKEN' => @auth_token,
+         content_type: 'application/xml',
+         accept: :json
+       }))
+  end
+
+  def delete_vcenter(vcenter_id)
+    JSON.parse(RestClient::Request.execute(method: :post,
+       url: "#{base_url}/compute/vcenters/#{vcenter_id}/deactivate",
+       verify_ssl: @verify_cert,
+       headers: {
+         :'X-SDS-AUTH-TOKEN' => @auth_token,
+         content_type: 'application/json',
+         accept: :json
+       }))
+  end
+
+  # EMC VMAX and VNX for block storage system version support
+  # => For supported versions, see the EMC ViPR Support Matrix on the EMC Community Network (community.emc.com)
+  # The EMC SMI-S Provider (a component of EMC Solutions Enabler) is required to use VMAX storage or VNX block. 
+  # The following information is required to verify & add the SMI-S provider storage systems to ViPR:
+  # => SMI-S Provider host address
+  # => SMI-S Provider credentials (default is admin/#1Password) 
+  # => SMI-S Provider port (default is 5989)
+  def add_emc_block_storage(name, ip_address, port_number, user_name, password, use_ssl)
+      emc_block_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_provider_create {
+          xml.name            name
+          xml.interface_type  "smis"
+          xml.ip_address      ip_address
+          xml.port_number     port_number
+          xml.user_name       user_name
+          xml.password        password
+          xml.use_ssl         use_ssl
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-providers",
+         verify_ssl: @verify_cert,
+         payload: emc_block_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+
+  # EMC VNX for File storage system support
+  # => Supported Protocol: NFS, CIFS (Snapshot restore is not supported for Isilon storage systems.)
+  # VNX File Control Station default port is 443
+  # VNX File Onboard Storage Provider default port is 5988
+  def add_emc_vnx_file_storage(name, ip_address, port_number, user_name, password, smis_provider_ip, smis_port_number, smis_user_name, smis_password, smis_use_ssl)
+      emc_vnx_file_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_system_create {
+          xml.name              name
+          xml.system_type       "vnxfile"
+          xml.ip_address        ip_address
+          xml.port_number       port_number
+          xml.user_name         user_name
+          xml.password          password
+          xml.smis_provider_ip  smis_provider_ip
+          xml.smis_port_number  smis_port_number
+          xml.smis_user_name    smis_user_name
+          xml.smis_password     smis_password
+          xml.smis_use_ssl      smis_use_ssl
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-systems",
+         verify_ssl: @verify_cert,
+         payload: emc_vnx_file_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+  
+  # Isilon Storage System Support
+  # => Supported Protocol: NFS, CIFS (Snapshot restore is not supported for Isilon storage systems.)
+  # Port (default is 8080) 
+  def add_emc_isilon_storage(name, ip_address, port_number, user_name, password)
+      emc_isilon_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_system_create {
+          xml.name name
+          xml.system_type "isilon"
+          xml.ip_address ip_address
+          xml.port_number port_number
+          xml.user_name user_name
+          xml.password password
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-systems",
+         verify_ssl: @verify_cert,
+         payload: emc_isilon_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+
+  # ViPR configuration requirements for VPLEX storage systems
+  # ViPR supports VPLEX in a Local or Metro configuration. VPLEX Geo configurations are not supported. 
+  def add_emc_vplex_storage(name, ip_address, port_number, user_name, password, use_ssl)
+      emc_vplex_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_provider_create {
+          xml.name name
+          xml.interface_type "vplex"
+          xml.ip_address ip_address
+          xml.port_number port_number
+          xml.user_name user_name
+          xml.password password
+          xml.use_ssl
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-providers",
+         verify_ssl: @verify_cert,
+         payload: emc_vplex_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+
+  # Stand-alone ScaleIO support and preconfiguration requirements
+  # Supported versions: ScaleIO 1.21.0.20 or later 
+  # Preconfiguration requirements:
+  # => Protection domains are defined.
+  # => All storage pools are defined. 
+  def add_emc_scaleio_storage(name, ip_address, port_number, user_name, password)
+      emc_scaleio_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_provider_create {
+          xml.name name
+          xml.interface_type "scaleio"
+          xml.ip_address ip_address
+          xml.port_number port_number
+          xml.user_name user_name
+          xml.password password
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-providers",
+         verify_ssl: @verify_cert,
+         payload: emc_scaleio_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+  
+  # Third-party block storage provider installation requirements
+  # ViPR uses the OpenStack Block Storage (Cinder) Service to add third-party block storage systems to ViPR. 
+  # For supported versions, see the EMC ViPR Support Matrix available on the EMC Community Network (community.emc.com). 
+  def add_third_party_block_storage(name, ip_address, port_number, user_name, password, use_ssl)
+      third_party_block_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_provider_create {
+          xml.name name
+          xml.interface_type "cinder"
+          xml.ip_address ip_address
+          xml.port_number port_number
+          xml.user_name user_name
+          xml.password password
+          xml.use_ssl use_ssl
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-providers",
+         verify_ssl: @verify_cert,
+         payload: third_party_block_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+  
+  # NetApp Storage System Support
+  # => Supported Protocol: NFS, CIFS
+  def add_netapp_storage(name, ip_address, port_number, user_name, password)
+      netapp_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_system_create {
+          xml.name name
+          xml.system_type "netapp"
+          xml.ip_address ip_address
+          xml.port_number port_number
+          xml.user_name user_name
+          xml.password password
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-systems",
+         verify_ssl: @verify_cert,
+         payload: netapp_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end
+
+  # Hitachi Data Systems support
+  # For supported versions, see the EMC ViPR Support Matrix on the EMC Community Network (community.emc.com).
+  # Hitachi HiCommand Device Manager is required to use HDS storage with ViPR. 
+  # You need to obtain the following information to configure and add the Hitachi HiCommand Device manager to ViPR:
+  # => A host or virtual machine for HiCommand Device manager setup
+  # => HiCommand Device Manager license, host address, credentials, and host port (default is 2001)  
+  def add_hitachi_storage(name, ip_address, port_number, user_name, password, use_ssl)
+      hitachi_storage_xml = Nokogiri::XML::Builder.new do |xml|
+        xml.storage_provider_create {
+          xml.name name
+          xml.interface_type "hicommand"
+          xml.ip_address ip_address
+          xml.port_number port_number
+          xml.user_name user_name
+          xml.password password
+          xml.use_ssl use_ssl
+        }
+      end
+
+      JSON.parse(RestClient::Request.execute(method: :post,
+         url: "#{base_url}/vdc/storage-providers",
+         verify_ssl: @verify_cert,
+         payload: hitachi_storage_xml.to_xml,
+         headers: {
+           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           content_type: 'application/xml',
+           accept: :json
+         }))
+  end  
+
   def to_boolean(str)
-<<<<<<< HEAD
-    #str.downcase == 'true'
-=======
     str.to_s.downcase == "true"
->>>>>>> upstream/master
   end
   
   private :login, :get_auth_token, :get_tenant_uid, :to_boolean
@@ -170,19 +426,3 @@ class Host
   end
   
 end
-
-base_url = 'https://192.168.50.141:4443'
-port = '4443'
-user_name = 'root'
-password = 'u1805003'
-verify_cert = false
-
-vipr = Vipruby.new(base_url,user_name,password,verify_cert)
-puts "success"
-
-#puts vipr.get_hosts
-
-#vcenter_id = vipr.get_all_vcenters['id'][0]
-#puts vipr.get_vcenter(vcenter_id)
-puts vipr.find_vcenter_object("kcv")
-puts vipr.find_host_object("esxi01")
