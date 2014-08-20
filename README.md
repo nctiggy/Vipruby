@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/vipruby.svg)](http://badge.fury.io/rb/vipruby)  
 #Vipruby 0.1.1
 Ruby Library for ViPR  
 
