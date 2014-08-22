@@ -49,9 +49,8 @@ vipr.delete_vcenter(vcenter_id)
 ####Fun facts
 To get a host href -> vipr.find_host_object(host.name)['resource'][0]['link']['href']
 
-##To Do:
+####To Do:
 - Breakout vipruby.rb into multiple classes and files. Host, Vcenter, Storage, Filesystems, Snapshots, etc... it's already getting large
 - Add more and more and more things
 - figure out if adding by JSON or XML is easier for future proof.
 - Add documentation via Yard
-- 

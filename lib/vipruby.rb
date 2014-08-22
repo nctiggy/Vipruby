@@ -1,6 +1,8 @@
 require 'rest-client'
 require 'json'
 require 'nokogiri'
+require 'vipruby/restcall'
+require 'vipruby/objects'
 
 class Vipruby
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
@@ -111,57 +113,36 @@ class Vipruby
         accept: :json
       }))
   end
-  
+
+  def add_vcenter(fqdn_or_ip, name, port, user_name, password)
+    api_url = "#{base_url}/tenants/#{@tenant_uid}/vcenters"
+    Vcenter.new(fqdn_or_ip, name, port, user_name, password, api_url, @auth_token, @verify_cert).add
+  end
+
   def get_all_vcenters
-    JSON.parse(RestClient::Request.execute(method: :get,url: "#{@base_url}/compute/vcenters/bulk",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      }))
+    api_url = "#{@base_url}/compute/vcenters/bulk"
+    RestCall.rest_get(api_url, @verify_cert, @auth_token)
+  end
+
+  def get_vcenter_info(vcenter_id)
+    api_url = "#{@base_url}/compute/vcenters/#{vcenter_id}"
+    RestCall.rest_get(api_url, @verify_cert, @auth_token)
   end
 
   def find_vcenter_object(vcenter_search_hash)
-    JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      }))
-  end
-  
-  def add_vcenter(fqdn_or_ip, name, port, user_name, password)
-    vcenterxml = Nokogiri::XML::Builder.new do |xml|
-      xml.vcenter_create {
-        xml.ip_address  fqdn_or_ip
-        xml.name        name
-        xml.port_number port
-        xml.user_name   user_name
-        xml.password    password
-      }
-    end
-
-    JSON.parse(RestClient::Request.execute(method: :post,
-       url: "#{base_url}/tenants/#{@tenant_uid}/vcenters",
-       verify_ssl: @verify_cert,
-       payload: vcenterxml.to_xml,
-       headers: {
-         :'X-SDS-AUTH-TOKEN' => @auth_token,
-         content_type: 'application/xml',
-         accept: :json
-       }))
+    api_url = "#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}"
+    RestCall.rest_get(api_url, @verify_cert, @auth_token)
   end
 
   def delete_vcenter(vcenter_id)
-    JSON.parse(RestClient::Request.execute(method: :post,
-       url: "#{base_url}/compute/vcenters/#{vcenter_id}/deactivate",
-       verify_ssl: @verify_cert,
-       headers: {
-         :'X-SDS-AUTH-TOKEN' => @auth_token,
-         content_type: 'application/json',
-         accept: :json
-       }))
+    api_url = "#{base_url}/compute/vcenters/#{vcenter_id}/deactivate"
+    Vcenter.delete(api_url, @auth_token, @verify_cert)
+    #### Or call the RestClass directly since we don't
+    #### don't need to reference a ruby object
+    # payload = {
+    # }.to_json
+    # RestCall.rest_post(payload, api_url, @verify_cert, @auth_token)
+    ####
   end
 
   # EMC VMAX and VNX for block storage system version support
@@ -424,5 +405,25 @@ class Host
     end
     initiator_json
   end
-  
 end
+
+base_url = 'https://vipr.kendrickcoleman.c0m:4443'
+user_name = 'root'
+password = 'u1805003'
+verify_cert = false
+
+vipr = Vipruby.new(base_url,user_name,password,verify_cert)
+#puts "success"
+
+#puts vipr.get_hosts
+
+#puts vcenter_id = vipr.get_all_vcenters['id'][0]
+#puts x = vipr.get_all_vcenters['id'][0]
+#puts vipr.get_vcenter_info(x)
+#puts vcenter_id
+#puts vcenter_id = vipr.find_vcenter_object("vCENTER1")
+#puts vcenter_id['resource']
+#puts id = vcenter_id['resource'][0]['id']
+#puts vipr.find_host_object("esxi01")
+puts vipr.add_vcenter('kcvcenter.kendrickcoleman.c0m', 'vCENTER1', '443', 'KENDRICKCOLEMAN\kcoleman', 'u1805003')
+#puts vipr.delete_vcenter(vcenter_id)

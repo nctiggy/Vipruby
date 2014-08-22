@@ -6,7 +6,8 @@ Gem::Specification.new do |s|
   s.description = "Currently limited to host and initiator add functions along with vCenter and storage additions"
   s.authors     = ["Craig J Smith", "Kendrick Coleman"]
   s.email       = 'nctiggy@gmail.com'
-  s.files       = ["lib/vipruby.rb"]
+  s.require_paths = %w[lib]
+  s.files       = ["lib/vipruby.rb", "lib/vipruby/objects/vcenter", "lib/vipruby/restcall", "README.md"]
   s.homepage    =
     'https://github.com/nctiggy/Vipruby'
   s.license       = 'MIT'
