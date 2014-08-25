@@ -3,15 +3,15 @@ require 'json'
 
 class Vcenter
 
-  def initialize (fqdn_or_ip, name, port, user_name, password, api_url, auth_token, verify_cert)
+  def initialize (fqdn_or_ip, name, port, user_name, password, api_url, verify_cert, auth_token)
     @fqdn_or_ip = fqdn_or_ip
     @name = name
     @port = port
     @user_name = user_name
     @password = password
     @api_url = api_url
-    @auth_token = auth_token
     @verify_cert = verify_cert
+    @auth_token = auth_token
   end
 
   def fqdn_or_ip
@@ -50,10 +50,19 @@ class Vcenter
     RestCall.rest_post(payload, @api_url, @verify_cert, @auth_token)
   end
 
-  def Vcenter.delete(api_url, auth_token, verify_cert)
+  def Vcenter.add_datacenter(name, api_url, verify_cert, auth_token)
+    payload = {
+      name: name
+    }.to_json
+    
+    RestCall.rest_post(payload, api_url, verify_cert, auth_token)
+  end
+
+  def Vcenter.delete(api_url, verify_cert, auth_token)
     payload = {
     }.to_json
     
     RestCall.rest_post(payload, api_url, verify_cert, auth_token)
   end
+
 end 
