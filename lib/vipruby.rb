@@ -1,6 +1,6 @@
 require 'rest-client'
 require 'json'
-require 'vipruby/restcall'
+require 'vipruby/viprbase'
 require 'vipruby/objects/vcenter'
 require 'vipruby/objects/emc_block'
 require 'vipruby/objects/emc_file'
@@ -11,6 +11,7 @@ require 'vipruby/objects/netapp'
 require 'vipruby/objects/hitachi'
 
 class Vipruby
+  include 'ViprBase'
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
   #SSL_VERSION = 'TLSv1'
   
