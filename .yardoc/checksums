@@ -1,0 +1,11 @@
+lib/vipruby.rb c41ea4d6d2121c12cf899f10df683a30cc744a06
+lib/vipruby/viprbase.rb 194f920aa56c0d16b3ca138a2032650edfaf20be
+lib/vipruby/objects/vplex.rb 78938901c5d251dcbcb5d9b46d824b88033cd6fd
+lib/vipruby/objects/isilon.rb 970a9181afe8c424e64eebea0150dff67e2e6bc3
+lib/vipruby/objects/netapp.rb 4527b429ce7f1ea26be5ae0e3a2dd15bc3c5a292
+lib/vipruby/objects/vcenter.rb ba4bc776baa58fcd3d21f5322ed55c84793557ed
+lib/vipruby/objects/hitachi.rb 33e07507a5d805ae3dd3b0c051669e7510704be0
+lib/vipruby/objects/scaleio.rb 14cac63107dd0783ca37890e8140ed3c1440657f
+lib/vipruby/objects/emc_file.rb 6489758f0e16a3a30b37aa1af38fb4975851976a
+lib/vipruby/objects/emc_block.rb 638e4b1ddfca99fa2545eddb5a47af5851510614
+lib/vipruby/objects/thirdpartyblock.rb 095bf718a6382b06331c54eeb32cd1c555c94678

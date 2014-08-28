@@ -1,14 +1,4 @@
-require 'rest-client'
-require 'json'
 require 'vipruby/viprbase'
-require 'vipruby/objects/vcenter'
-require 'vipruby/objects/emc_block'
-require 'vipruby/objects/emc_file'
-require 'vipruby/objects/isilon'
-require 'vipruby/objects/scaleio'
-require 'vipruby/objects/thirdpartyblock'
-require 'vipruby/objects/netapp'
-require 'vipruby/objects/hitachi'
 
 class Vipruby
   include 'ViprBase'
@@ -20,29 +10,6 @@ class Vipruby
     @verify_cert = to_boolean(verify_cert)
     @auth_token = get_auth_token(user_name,password)
     @tenant_uid = get_tenant_uid['id']
-  end
-  
-  def get_tenant_uid
-    JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/tenant",
-      headers: {:'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      },
-      verify_ssl: @verify_cert
-      ))
-  end
-  
-  def login(user_name,password)
-    RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/login",
-      user: user_name,
-      password: password,
-      verify_ssl: @verify_cert
-    )
-  end
-  
-  def get_auth_token(user_name,password)
-    login(user_name,password).headers[:x_sds_auth_token]
   end
   
   def add_host(host)
@@ -255,12 +222,7 @@ class Vipruby
   end  
 
 ####----------- END STORAGE ARRAYS ----------------######
-
-  def to_boolean(str)
-    str.to_s.downcase == "true"
-  end
   
-  private :login, :get_auth_token, :get_tenant_uid, :to_boolean
 end
 
 class Host
