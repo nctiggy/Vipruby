@@ -12,11 +12,16 @@ class Vipruby
     @tenant_uid = get_tenant_uid['id']
   end
   
-  def add_host(host)
+  # Add a host to ViPR
+  #
+  # @param host_payload [JSON] New host information
+  # @return [JSON] returns host information
+  # @author Craig J Smith
+  def add_host(host_payload)
      JSON.parse(RestClient::Request.execute(method: :post,
        url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
        verify_ssl: @verify_cert,
-       payload: host,
+       payload: host_payload,
        headers: {
          :'X-SDS-AUTH-TOKEN' => @auth_token,
          content_type: 'application/json',
@@ -24,20 +29,28 @@ class Vipruby
        }))
   end
   
-  def add_initiators(initiators,host_href)
-    initiators.each do |initiator|
-      RestClient::Request.execute(method: :post,
-        url: "#{@base_url}#{host_href}/initiators",
-        verify_ssl: @verify_cert,
-        payload: initiator,
-        headers: {
-          :'X-SDS-AUTH-TOKEN' => @auth_token,
-          content_type: 'application/json',
-          accept: :json
-        })
-    end
+  # Add an initiator to a host in ViPR
+  #
+  # @param initiator_payload [JSON] New initiator information in JSON format
+  # @param host_href [STRING] HREF value of a host
+  # @return [JSON] returns initiator information
+  # @author Craig J Smith
+  def add_initiator(initiator_payload,host_href)
+    JSON.parse(RestClient::Request.execute(method: :post,
+      url: "#{@base_url}#{host_href}/initiators",
+      verify_ssl: @verify_cert,
+      payload: initiator_payload,
+      headers: {
+        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        content_type: 'application/json',
+        accept: :json
+      }))
   end
   
+  # Get all Host objects in ViPR
+  #
+  # @return [JSON] returns a JSON collection of all hosts in ViPR
+  # @author Craig J Smith
   def get_all_hosts
     JSON.parse(RestClient::Request.execute(method: :get,
       url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
@@ -48,6 +61,11 @@ class Vipruby
       }))
   end
   
+  # Get an individual host's details in ViPR
+  #
+  # @param host_href [STRING] HREF value of a host
+  # @return [JSON] returns host information
+  # @author Craig J Smith
   def get_host(host_href)
     JSON.parse(RestClient::Request.execute(method: :get,
       url: "#{base_url}#{host_href}",
@@ -59,6 +77,11 @@ class Vipruby
       }))
   end
   
+  # Deactive a host
+  #
+  # @param host_href [STRING] HREF value of a host
+  # @return [JSON] returns ... information
+  # @author Craig J Smith
   def deactivate_host(host_href)
     JSON.parse(RestClient::Request.execute(method: :post,
       url: "#{base_url}#{host_href}/deactivate",
@@ -70,17 +93,35 @@ class Vipruby
       }))
   end
 
+  # Add a host and it's initiators (Need to change param values)
+  #
+  # @param host [OBJECT] host object
+  # @return [JSON] returns host information
+  # @author Craig J Smith
   def add_host_and_initiators(host)
-    add_initiators(host.generate_initiators_json,add_host(host.generate_json)['resource']['link']['href'])
+    host_href = add_host(host.generate_json)['resource']['link']['href']
+    host.generate_inistiators_json.each do |initiator|
+      add_initiator(initiator,host_href)
+    end
   end
   
+  # Detirmine if a host already exists in ViPR
+  #
+  # @param hostname [STRING] The name of the host to search for
+  # @return [BOOLEAN] returns TRUE/FALSE 
+  # @author Craig J Smith
   def host_exists?(hostname)
     find_host_object(hostname)['resource'].any?
   end
   
-  def find_host_object(search_hash)
+  # Find and return query results for a host in ViPR
+  #
+  # @param search_param [STRING] Value to search host for
+  # @return [JSON] returns search results
+  # @author Craig J Smith
+  def find_host_object(search_param)
     JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/compute/hosts/search?name=#{search_hash}",
+      url: "#{@base_url}/compute/hosts/search?name=#{search_param}",
       verify_ssl: @verify_cert,
       headers: {
         :'X-SDS-AUTH-TOKEN' => @auth_token,
