@@ -309,7 +309,7 @@ Support Matrix on the EMC Community Network (community.emc.com).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_host-instance_method" title="#add_host (instance method)">- (Object) <strong>add_host</strong>(host) </a>
+      <a href="#add_host-instance_method" title="#add_host (instance method)">- (JSON) <strong>add_host</strong>(host_payload) </a>
     
 
     
@@ -323,7 +323,9 @@ Support Matrix on the EMC Community Network (community.emc.com).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Add a host to ViPR.</p>
+</div></span>
   
 </li>
 
@@ -331,7 +333,7 @@ Support Matrix on the EMC Community Network (community.emc.com).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_host_and_initiators-instance_method" title="#add_host_and_initiators (instance method)">- (Object) <strong>add_host_and_initiators</strong>(host) </a>
+      <a href="#add_host_and_initiators-instance_method" title="#add_host_and_initiators (instance method)">- (JSON) <strong>add_host_and_initiators</strong>(host) </a>
     
 
     
@@ -345,7 +347,9 @@ Support Matrix on the EMC Community Network (community.emc.com).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Add a host and it&#39;s initiators (Need to change param values).</p>
+</div></span>
   
 </li>
 
@@ -353,7 +357,7 @@ Support Matrix on the EMC Community Network (community.emc.com).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_initiators-instance_method" title="#add_initiators (instance method)">- (Object) <strong>add_initiators</strong>(initiators, host_href) </a>
+      <a href="#add_initiator-instance_method" title="#add_initiator (instance method)">- (JSON) <strong>add_initiator</strong>(initiator_payload, host_href) </a>
     
 
     
@@ -367,7 +371,9 @@ Support Matrix on the EMC Community Network (community.emc.com).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Add an initiator to a host in ViPR.</p>
+</div></span>
   
 </li>
 
@@ -551,7 +557,7 @@ VPLEX in a Local or Metro configuration.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#deactivate_host-instance_method" title="#deactivate_host (instance method)">- (Object) <strong>deactivate_host</strong>(host_href) </a>
+      <a href="#deactivate_host-instance_method" title="#deactivate_host (instance method)">- (JSON) <strong>deactivate_host</strong>(host_href) </a>
     
 
     
@@ -565,7 +571,9 @@ VPLEX in a Local or Metro configuration.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Deactive a host.</p>
+</div></span>
   
 </li>
 
@@ -595,7 +603,7 @@ VPLEX in a Local or Metro configuration.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#find_host_object-instance_method" title="#find_host_object (instance method)">- (Object) <strong>find_host_object</strong>(search_hash) </a>
+      <a href="#find_host_object-instance_method" title="#find_host_object (instance method)">- (JSON) <strong>find_host_object</strong>(search_param) </a>
     
 
     
@@ -609,7 +617,9 @@ VPLEX in a Local or Metro configuration.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Find and return query results for a host in ViPR.</p>
+</div></span>
   
 </li>
 
@@ -639,7 +649,7 @@ VPLEX in a Local or Metro configuration.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_all_hosts-instance_method" title="#get_all_hosts (instance method)">- (Object) <strong>get_all_hosts</strong> </a>
+      <a href="#get_all_hosts-instance_method" title="#get_all_hosts (instance method)">- (JSON) <strong>get_all_hosts</strong> </a>
     
 
     
@@ -653,7 +663,9 @@ VPLEX in a Local or Metro configuration.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Get all Host objects in ViPR.</p>
+</div></span>
   
 </li>
 
@@ -680,32 +692,10 @@ VPLEX in a Local or Metro configuration.</p>
 </li>
 
       
-        <li class="private ">
-  <span class="summary_signature">
-    
-      <a href="#get_auth_token-instance_method" title="#get_auth_token (instance method)">- (Object) <strong>get_auth_token</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  <span class="note title private">private</span>
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_host-instance_method" title="#get_host (instance method)">- (Object) <strong>get_host</strong>(host_href) </a>
+      <a href="#get_host-instance_method" title="#get_host (instance method)">- (JSON) <strong>get_host</strong>(host_href) </a>
     
 
     
@@ -719,29 +709,9 @@ VPLEX in a Local or Metro configuration.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="private ">
-  <span class="summary_signature">
-    
-      <a href="#get_tenant_uid-instance_method" title="#get_tenant_uid (instance method)">- (Object) <strong>get_tenant_uid</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  <span class="note title private">private</span>
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Get an individual host&#39;s details in ViPR.</p>
+</div></span>
   
 </li>
 
@@ -837,7 +807,7 @@ VPLEX in a Local or Metro configuration.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#host_exists%3F-instance_method" title="#host_exists? (instance method)">- (Boolean) <strong>host_exists?</strong>(hostname) </a>
+      <a href="#host_exists%3F-instance_method" title="#host_exists? (instance method)">- (BOOLEAN) <strong>host_exists?</strong>(hostname) </a>
     
 
     
@@ -851,7 +821,9 @@ VPLEX in a Local or Metro configuration.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Detirmine if a host already exists in ViPR.</p>
+</div></span>
   
 </li>
 
@@ -878,50 +850,6 @@ VPLEX in a Local or Metro configuration.</p>
     <span class="summary_desc"><div class='inline'>
 <p>SSL_VERSION = &#39;TLSv1&#39;.</p>
 </div></span>
-  
-</li>
-
-      
-        <li class="private ">
-  <span class="summary_signature">
-    
-      <a href="#login-instance_method" title="#login (instance method)">- (Object) <strong>login</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  <span class="note title private">private</span>
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="private ">
-  <span class="summary_signature">
-    
-      <a href="#to_boolean-instance_method" title="#to_boolean (instance method)">- (Object) <strong>to_boolean</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  <span class="note title private">private</span>
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -958,15 +886,15 @@ VPLEX in a Local or Metro configuration.</p>
       <pre class="lines">
 
 
+8
+9
 10
 11
 12
-13
-14
-15</pre>
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_base_url'>base_url</span><span class='comma'>,</span><span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span><span class='id identifier rubyid_password'>password</span><span class='comma'>,</span><span class='id identifier rubyid_verify_cert'>verify_cert</span><span class='rparen'>)</span>
   <span class='ivar'>@base_url</span> <span class='op'>=</span> <span class='id identifier rubyid_base_url'>base_url</span>
@@ -1012,12 +940,12 @@ VPLEX in a Local or Metro configuration.</p>
       <pre class="lines">
 
 
-7
-8
-9</pre>
+5
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_token'>auth_token</span>
   <span class='ivar'>@auth_token</span>
@@ -1055,12 +983,12 @@ VPLEX in a Local or Metro configuration.</p>
       <pre class="lines">
 
 
-7
-8
-9</pre>
+5
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base_url'>base_url</span>
   <span class='ivar'>@base_url</span>
@@ -1098,12 +1026,12 @@ VPLEX in a Local or Metro configuration.</p>
       <pre class="lines">
 
 
-7
-8
-9</pre>
+5
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tenant_uid'>tenant_uid</span>
   <span class='ivar'>@tenant_uid</span>
@@ -1141,12 +1069,12 @@ VPLEX in a Local or Metro configuration.</p>
       <pre class="lines">
 
 
-7
-8
-9</pre>
+5
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_verify_cert'>verify_cert</span>
   <span class='ivar'>@verify_cert</span>
@@ -1201,13 +1129,13 @@ verify &amp; add the SMI-S provider storage systems to ViPR:</p>
       <pre class="lines">
 
 
-161
-162
-163
-164</pre>
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 161</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_emc_block'>add_emc_block</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-providers</span><span class='tstring_end'>&quot;</span></span>
@@ -1249,13 +1177,13 @@ Provider default port is 5988</p>
       <pre class="lines">
 
 
-170
-171
-172
-173</pre>
+167
+168
+169
+170</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 170</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_emc_file'>add_emc_file</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_smis_provider_ip'>smis_provider_ip</span><span class='comma'>,</span> <span class='id identifier rubyid_smis_port_number'>smis_port_number</span><span class='comma'>,</span> <span class='id identifier rubyid_smis_user_name'>smis_user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_smis_password'>smis_password</span><span class='comma'>,</span> <span class='id identifier rubyid_smis_use_ssl'>smis_use_ssl</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-systems</span><span class='tstring_end'>&quot;</span></span>
@@ -1300,13 +1228,13 @@ HiCommand Device manager to ViPR:</p>
       <pre class="lines">
 
 
-221
-222
-223
-224</pre>
+218
+219
+220
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_hitachi'>add_hitachi</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-providers</span><span class='tstring_end'>&quot;</span></span>
@@ -1320,43 +1248,92 @@ HiCommand Device manager to ViPR:</p>
       <div class="method_details ">
   <h3 class="signature " id="add_host-instance_method">
   
-    - (<tt>Object</tt>) <strong>add_host</strong>(host) 
+    - (<tt>JSON</tt>) <strong>add_host</strong>(host_payload) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a host to ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_payload</span>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-17
-18
-19
 20
 21
-22
-23
-24
-25
-26
-27</pre>
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 20</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_add_host'>add_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='rparen'>)</span>
-   <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='label'>method:</span> <span class='symbol'>:post</span><span class='comma'>,</span>
-     <span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-     <span class='label'>verify_ssl:</span> <span class='ivar'>@verify_cert</span><span class='comma'>,</span>
-     <span class='label'>payload:</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span>
-     <span class='label'>headers:</span> <span class='lbrace'>{</span>
-       <span class='symbol'>:X-SDS-AUTH-TOKEN</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span>
-       <span class='label'>content_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='label'>accept:</span> <span class='symbol'>:json</span>
-     <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_add_host'>add_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host_payload'>host_payload</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='id identifier rubyid_host_payload'>host_payload</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1366,27 +1343,98 @@ HiCommand Device manager to ViPR:</p>
       <div class="method_details ">
   <h3 class="signature " id="add_host_and_initiators-instance_method">
   
-    - (<tt>Object</tt>) <strong>add_host_and_initiators</strong>(host) 
+    - (<tt>JSON</tt>) <strong>add_host_and_initiators</strong>(host) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a host and it&#39;s initiators (Need to change param values)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'>(<tt>OBJECT</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>host object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-75
-76
-77</pre>
+65
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_host_and_initiators'>add_host_and_initiators</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_add_initiators'>add_initiators</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_generate_initiators_json'>generate_initiators_json</span><span class='comma'>,</span><span class='id identifier rubyid_add_host'>add_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_generate_json'>generate_json</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>resource</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>link</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>href</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_host_href'>host_href</span> <span class='op'>=</span> <span class='id identifier rubyid_add_host'>add_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_generate_json'>generate_json</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>resource</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>link</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>href</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_generate_inistiators_json'>generate_inistiators_json</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_initiator'>initiator</span><span class='op'>|</span>
+    <span class='id identifier rubyid_add_initiator'>add_initiator</span><span class='lparen'>(</span><span class='id identifier rubyid_initiator'>initiator</span><span class='comma'>,</span><span class='id identifier rubyid_host_href'>host_href</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1394,49 +1442,110 @@ HiCommand Device manager to ViPR:</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="add_initiators-instance_method">
+  <h3 class="signature " id="add_initiator-instance_method">
   
-    - (<tt>Object</tt>) <strong>add_initiators</strong>(initiators, host_href) 
-  
-
+    - (<tt>JSON</tt>) <strong>add_initiator</strong>(initiator_payload, host_href) 
   
 
   
-</h3><table class="source_code">
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add an initiator to a host in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>initiator_payload</span>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New initiator information in JSON format</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host_href</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HREF value of a host</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns initiator information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-29
 30
 31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41</pre>
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 30</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_add_initiators'>add_initiators</span><span class='lparen'>(</span><span class='id identifier rubyid_initiators'>initiators</span><span class='comma'>,</span><span class='id identifier rubyid_host_href'>host_href</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_initiators'>initiators</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_initiator'>initiator</span><span class='op'>|</span>
-    <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='label'>method:</span> <span class='symbol'>:post</span><span class='comma'>,</span>
-      <span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_href'>host_href</span><span class='embexpr_end'>}</span><span class='tstring_content'>/initiators</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-      <span class='label'>verify_ssl:</span> <span class='ivar'>@verify_cert</span><span class='comma'>,</span>
-      <span class='label'>payload:</span> <span class='id identifier rubyid_initiator'>initiator</span><span class='comma'>,</span>
-      <span class='label'>headers:</span> <span class='lbrace'>{</span>
-        <span class='symbol'>:X-SDS-AUTH-TOKEN</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span>
-        <span class='label'>content_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-        <span class='label'>accept:</span> <span class='symbol'>:json</span>
-      <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_add_initiator'>add_initiator</span><span class='lparen'>(</span><span class='id identifier rubyid_initiator_payload'>initiator_payload</span><span class='comma'>,</span><span class='id identifier rubyid_host_href'>host_href</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='id identifier rubyid_initiator_payload'>initiator_payload</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_href'>host_href</span><span class='embexpr_end'>}</span><span class='tstring_content'>/initiators</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1473,13 +1582,13 @@ HiCommand Device manager to ViPR:</p>
       <pre class="lines">
 
 
-178
-179
-180
-181</pre>
+175
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 175</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_isilon'>add_isilon</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-systems</span><span class='tstring_end'>&quot;</span></span>
@@ -1518,13 +1627,13 @@ HiCommand Device manager to ViPR:</p>
       <pre class="lines">
 
 
-210
-211
-212
-213</pre>
+207
+208
+209
+210</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 207</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_netapp'>add_netapp</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-systems</span><span class='tstring_end'>&quot;</span></span>
@@ -1566,13 +1675,13 @@ versions: ScaleIO 1.21.0.20 or later  Preconfiguration requirements:</p>
       <pre class="lines">
 
 
-195
-196
-197
-198</pre>
+192
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 195</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 192</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_scaleio'>add_scaleio</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-providers</span><span class='tstring_end'>&quot;</span></span>
@@ -1612,13 +1721,13 @@ available on the EMC Community Network (community.emc.com).</p>
       <pre class="lines">
 
 
-203
-204
-205
-206</pre>
+200
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 203</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 200</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_third_party_block'>add_third_party_block</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-providers</span><span class='tstring_end'>&quot;</span></span>
@@ -1655,13 +1764,13 @@ available on the EMC Community Network (community.emc.com).</p>
       <pre class="lines">
 
 
-97
-98
-99
-100</pre>
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_vcenter'>add_vcenter</span><span class='lparen'>(</span><span class='id identifier rubyid_fqdn_or_ip'>fqdn_or_ip</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vcenters</span><span class='tstring_end'>&quot;</span></span>
@@ -1700,13 +1809,13 @@ datacenter is no longer there. Don&#39;t know..?</p>
       <pre class="lines">
 
 
-130
-131
-132
-133</pre>
+127
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_vcenter_datacenter'>add_vcenter_datacenter</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vcenter-data-centers</span><span class='tstring_end'>&quot;</span></span>
@@ -1745,13 +1854,13 @@ supported.</p>
       <pre class="lines">
 
 
-185
-186
-187
-188</pre>
+182
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 185</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 182</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_vplex'>add_vplex</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_address'>ip_address</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/storage-providers</span><span class='tstring_end'>&quot;</span></span>
@@ -1765,41 +1874,92 @@ supported.</p>
       <div class="method_details ">
   <h3 class="signature " id="deactivate_host-instance_method">
   
-    - (<tt>Object</tt>) <strong>deactivate_host</strong>(host_href) 
+    - (<tt>JSON</tt>) <strong>deactivate_host</strong>(host_href) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deactive a host</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_href</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HREF value of a host</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns … information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_deactivate_host'>deactivate_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host_href'>host_href</span><span class='rparen'>)</span>
-  <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='label'>method:</span> <span class='symbol'>:post</span><span class='comma'>,</span>
-    <span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_href'>host_href</span><span class='embexpr_end'>}</span><span class='tstring_content'>/deactivate</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='label'>verify_ssl:</span> <span class='ivar'>@verify_cert</span><span class='comma'>,</span>
-    <span class='label'>headers:</span> <span class='lbrace'>{</span>
-      <span class='symbol'>:X-SDS-AUTH-TOKEN</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span>
-      <span class='label'>content_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-      <span class='label'>accept:</span> <span class='symbol'>:json</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_href'>host_href</span><span class='embexpr_end'>}</span><span class='tstring_content'>/deactivate</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1821,19 +1981,19 @@ supported.</p>
       <pre class="lines">
 
 
+138
+139
+140
 141
 142
 143
 144
 145
 146
-147
-148
-149
-150</pre>
+147</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 141</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_vcenter'>delete_vcenter</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/deactivate</span><span class='tstring_end'>&quot;</span></span>
@@ -1853,39 +2013,92 @@ supported.</p>
       <div class="method_details ">
   <h3 class="signature " id="find_host_object-instance_method">
   
-    - (<tt>Object</tt>) <strong>find_host_object</strong>(search_hash) 
+    - (<tt>JSON</tt>) <strong>find_host_object</strong>(search_param) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Find and return query results for a host in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>search_param</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Value to search host for</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns search results</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-83
-84
-85
 86
 87
-88
-89
-90
-91</pre>
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 86</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_find_host_object'>find_host_object</span><span class='lparen'>(</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='rparen'>)</span>
-  <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='label'>method:</span> <span class='symbol'>:get</span><span class='comma'>,</span>
-    <span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/hosts/search?name=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_search_hash'>search_hash</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='label'>verify_ssl:</span> <span class='ivar'>@verify_cert</span><span class='comma'>,</span>
-    <span class='label'>headers:</span> <span class='lbrace'>{</span>
-      <span class='symbol'>:X-SDS-AUTH-TOKEN</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span>
-      <span class='label'>accept:</span> <span class='symbol'>:json</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_find_host_object'>find_host_object</span><span class='lparen'>(</span><span class='id identifier rubyid_search_param'>search_param</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/hosts/search?name=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_search_param'>search_param</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1907,14 +2120,14 @@ supported.</p>
       <pre class="lines">
 
 
+132
+133
+134
 135
-136
-137
-138
-139</pre>
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_vcenter_object'>find_vcenter_object</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_search_hash'>vcenter_search_hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/search?name=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_search_hash'>vcenter_search_hash</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1929,39 +2142,72 @@ supported.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_all_hosts-instance_method">
   
-    - (<tt>Object</tt>) <strong>get_all_hosts</strong> 
+    - (<tt>JSON</tt>) <strong>get_all_hosts</strong> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all Host objects in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns a JSON collection of all hosts in ViPR</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-43
-44
-45
-46
-47
-48
-49
-50
-51</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_all_hosts'>get_all_hosts</span>
-  <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='label'>method:</span> <span class='symbol'>:get</span><span class='comma'>,</span>
-    <span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='label'>verify_ssl:</span> <span class='ivar'>@verify_cert</span><span class='comma'>,</span>
-    <span class='label'>headers:</span> <span class='lbrace'>{</span>
-      <span class='symbol'>:X-SDS-AUTH-TOKEN</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span>
-      <span class='label'>accept:</span> <span class='symbol'>:json</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1983,13 +2229,13 @@ supported.</p>
       <pre class="lines">
 
 
-102
-103
-104
-105</pre>
+99
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_all_vcenters'>get_all_vcenters</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/bulk</span><span class='tstring_end'>&quot;</span></span>
@@ -2001,71 +2247,98 @@ supported.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="get_auth_token-instance_method">
-  
-    - (<tt>Object</tt>) <strong>get_auth_token</strong>  <span class="extras">(private)</span>
-  
-
-  
-
-  
-</h3>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="get_host-instance_method">
   
-    - (<tt>Object</tt>) <strong>get_host</strong>(host_href) 
+    - (<tt>JSON</tt>) <strong>get_host</strong>(host_href) 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get an individual host&#39;s details in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_href</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HREF value of a host</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_host'>get_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host_href'>host_href</span><span class='rparen'>)</span>
-  <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='label'>method:</span> <span class='symbol'>:get</span><span class='comma'>,</span>
-    <span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_href'>host_href</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='label'>verify_ssl:</span> <span class='ivar'>@verify_cert</span><span class='comma'>,</span>
-    <span class='label'>headers:</span> <span class='lbrace'>{</span>
-      <span class='symbol'>:X-SDS-AUTH-TOKEN</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span>
-      <span class='label'>content_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-      <span class='label'>accept:</span> <span class='symbol'>:json</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_href'>host_href</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="get_tenant_uid-instance_method">
-  
-    - (<tt>Object</tt>) <strong>get_tenant_uid</strong>  <span class="extras">(private)</span>
-  
-
-  
-
-  
-</h3>
 </div>
     
       <div class="method_details ">
@@ -2083,13 +2356,13 @@ supported.</p>
       <pre class="lines">
 
 
-107
-108
-109
-110</pre>
+104
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_vcenter'>get_vcenter</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -2115,13 +2388,13 @@ supported.</p>
       <pre class="lines">
 
 
-117
-118
-119
-120</pre>
+114
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_vcenter_clusters'>get_vcenter_clusters</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/clusters</span><span class='tstring_end'>&quot;</span></span>
@@ -2147,13 +2420,13 @@ supported.</p>
       <pre class="lines">
 
 
-122
-123
-124
-125</pre>
+119
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_vcenter_datacenters'>get_vcenter_datacenters</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vcenter-data-centers</span><span class='tstring_end'>&quot;</span></span>
@@ -2179,13 +2452,13 @@ supported.</p>
       <pre class="lines">
 
 
-112
-113
-114
-115</pre>
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_vcenter_hosts'>get_vcenter_hosts</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_api_url'>api_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/vcenters/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vcenter_id'>vcenter_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span>
@@ -2199,7 +2472,7 @@ supported.</p>
       <div class="method_details ">
   <h3 class="signature " id="host_exists?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>host_exists?</strong>(hostname) 
+    - (<tt>BOOLEAN</tt>) <strong>host_exists?</strong>(hostname) 
   
 
   
@@ -2208,20 +2481,63 @@ supported.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Detirmine if a host already exists in ViPR</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>hostname</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the host to search for</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
+        <span class='type'>(<tt>BOOLEAN</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>returns TRUE/FALSE</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
       
     </li>
   
@@ -2233,12 +2549,12 @@ supported.</p>
       <pre class="lines">
 
 
-79
-80
-81</pre>
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_host_exists?'>host_exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_find_host_object'>find_host_object</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>resource</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
@@ -2248,38 +2564,14 @@ supported.</p>
 </table>
 </div>
     
-      <div class="method_details ">
-  <h3 class="signature " id="login-instance_method">
-  
-    - (<tt>Object</tt>) <strong>login</strong>  <span class="extras">(private)</span>
-  
-
-  
-
-  
-</h3>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="to_boolean-instance_method">
-  
-    - (<tt>Object</tt>) <strong>to_boolean</strong>  <span class="extras">(private)</span>
-  
-
-  
-
-  
-</h3>
-</div>
-    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Thu Aug 28 00:05:02 2014 by
+  Generated on Sun Aug 31 23:08:21 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.1).
+  0.8.7.4 (ruby-2.0.0).
 </div>
 
   </body>

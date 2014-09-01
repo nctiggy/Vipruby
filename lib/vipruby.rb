@@ -18,15 +18,7 @@ class Vipruby
   # @return [JSON] returns host information
   # @author Craig J Smith
   def add_host(host_payload)
-     JSON.parse(RestClient::Request.execute(method: :post,
-       url: "#{base_url}/tenants/#{@tenant_uid}/hosts",
-       verify_ssl: @verify_cert,
-       payload: host_payload,
-       headers: {
-         :'X-SDS-AUTH-TOKEN' => @auth_token,
-         content_type: 'application/json',
-         accept: :json
-       }))
+    rest_post(host_payload, "#{base_url}/tenants/#{@tenant_uid}/hosts")
   end
   
   # Add an initiator to a host in ViPR
@@ -36,15 +28,7 @@ class Vipruby
   # @return [JSON] returns initiator information
   # @author Craig J Smith
   def add_initiator(initiator_payload,host_href)
-    JSON.parse(RestClient::Request.execute(method: :post,
-      url: "#{@base_url}#{host_href}/initiators",
-      verify_ssl: @verify_cert,
-      payload: initiator_payload,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        content_type: 'application/json',
-        accept: :json
-      }))
+    rest_post(initiator_payload, "#{@base_url}#{host_href}/initiators")
   end
   
   # Get all Host objects in ViPR
@@ -52,13 +36,7 @@ class Vipruby
   # @return [JSON] returns a JSON collection of all hosts in ViPR
   # @author Craig J Smith
   def get_all_hosts
-    JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/tenants/#{@tenant_uid}/hosts",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      }))
+    rest_get("#{@base_url}/tenants/#{@tenant_uid}/hosts")
   end
   
   # Get an individual host's details in ViPR
@@ -67,14 +45,7 @@ class Vipruby
   # @return [JSON] returns host information
   # @author Craig J Smith
   def get_host(host_href)
-    JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{base_url}#{host_href}",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        content_type: 'application/json',
-        accept: :json
-      }))
+    rest_get("#{base_url}#{host_href}")
   end
   
   # Deactive a host
@@ -83,14 +54,7 @@ class Vipruby
   # @return [JSON] returns ... information
   # @author Craig J Smith
   def deactivate_host(host_href)
-    JSON.parse(RestClient::Request.execute(method: :post,
-      url: "#{base_url}#{host_href}/deactivate",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        content_type: 'application/json',
-        accept: :json
-      }))
+    rest_post(nil, "#{base_url}#{host_href}/deactivate")
   end
 
   # Add a host and it's initiators (Need to change param values)
@@ -120,13 +84,7 @@ class Vipruby
   # @return [JSON] returns search results
   # @author Craig J Smith
   def find_host_object(search_param)
-    JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/compute/hosts/search?name=#{search_param}",
-      verify_ssl: @verify_cert,
-      headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      }))
+    rest_get("#{@base_url}/compute/hosts/search?name=#{search_param}")
   end
 
   #############################################################
