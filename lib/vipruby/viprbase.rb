@@ -9,13 +9,13 @@ module ViprBase
   # @param api_url [string] the full API URL path
   # @return [JSON] the object converted into JSON format.
   # @author Kendrick Coleman
-  def rest_post(payload, api_url)
+  def rest_post(payload, api_url, auth=nil, cert=nil)
     JSON.parse(RestClient::Request.execute(method: :post,
          url: api_url,
-         verify_ssl: @verify_cert,
+         verify_ssl: cert.nil? ? @verify_cert : cert,
          payload: payload,
          headers: {
-           :'X-SDS-AUTH-TOKEN' => @auth_token,
+           :'X-SDS-AUTH-TOKEN' => auth.nil? ? @auth_token : auth,
            content_type: 'application/json',
            accept: :json
          })).to_json
@@ -26,12 +26,12 @@ module ViprBase
   # @param api_url [string] the full API URL path
   # @return [JSON] the object converted into JSON format.
   # @author Kendrick Coleman
-  def rest_get(api_url)
+  def rest_get(api_url, auth=nil, cert=nil)
     JSON.parse(RestClient::Request.execute(method: :get,
       url: api_url,
-      verify_ssl: @verify_cert,
+      verify_ssl: cert.nil? ? @verify_cert : cert,
       headers: {
-        :'X-SDS-AUTH-TOKEN' => @auth_token,
+        :'X-SDS-AUTH-TOKEN' => auth.nil? ? @auth_token : auth,
         accept: :json
       })).to_json
   end
@@ -40,14 +40,8 @@ module ViprBase
   #
   # @return [array] HTML return with the Tenant UID ['id].
   # @author Craig J Smith
-  def get_tenant_uid
-    JSON.parse(RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/tenant",
-      headers: {:'X-SDS-AUTH-TOKEN' => @auth_token,
-        accept: :json
-      },
-      verify_ssl: @verify_cert
-      ))
+  def get_tenant_uid(base=nil, auth=nil, cert=nil)
+    rest_get(base.nil? ? @base_url : base + "/tenant", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert,)
   end
   
   # Login to ViPR
@@ -56,13 +50,17 @@ module ViprBase
   # @param password [string] the password for the username
   # @return [HTML] returns token information in headers
   # @author Craig J Smith
-  def login(user_name,password)
+  def login(user_name, password, base=nil, cert=nil)
     RestClient::Request.execute(method: :get,
-      url: "#{@base_url}/login",
+      url: base.nil? ? @base_url : base + "/login",
       user: user_name,
       password: password,
-      verify_ssl: @verify_cert
+      verify_ssl: cert.nil? ? @verify_cert : cert
     )
+  end
+  
+  def generate_base_url(ip_or_fqdn)
+    "https://#{ip_or_fqdn}:4443"
   end
   
   # Get User's Authentication Token
@@ -71,8 +69,8 @@ module ViprBase
   # @param password [string] the password for the username
   # @return [String] returns authentication token for the user
   # @author Craig J Smith
-  def get_auth_token(user_name,password)
-    login(user_name,password).headers[:x_sds_auth_token]
+  def get_auth_token(user_name,password, cert=nil, base=nil)
+    login(user_name, password, cert.nil? ? @verify_cert : cert, base.nil? ? @base_url : base).headers[:x_sds_auth_token]
   end
   
   # Ensure value is a boolean
@@ -83,6 +81,5 @@ module ViprBase
   def to_boolean(str)
     str.to_s.downcase == "true"
   end
-  
-  private :login, :get_auth_token, :get_tenant_uid, :to_boolean, :rest_post, :rest_get
+
 end
