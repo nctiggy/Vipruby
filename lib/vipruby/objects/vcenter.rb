@@ -45,14 +45,14 @@ module ViprVcenter
         user_name: user_name,
         password: password
       }.to_json
-    rest_post(payload, "#{base_url}/tenants/#{@tenant_uid}/vcenters", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+    rest_post(payload, "#{@base_url}/tenants/#{@tenant_uid}/vcenters", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
 
   def delete_vcenter(vcenter_id=nil, auth=nil, cert=nil)
     check_vcenter(vcenter_id)
     payload = {
       }.to_json
-    rest_post(payload, "#{base_url}/compute/vcenters/#{vcenter_id}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+    rest_post(payload, "#{@base_url}/compute/vcenters/#{vcenter_id}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
 
   #############################################################
