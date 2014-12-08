@@ -1,68 +1,79 @@
 require 'rest-client'
 require 'json'
 
-class Vcenter
+module ViprVcenter
 
-  def initialize (fqdn_or_ip, name, port, user_name, password, api_url, verify_cert, auth_token)
-    @fqdn_or_ip = fqdn_or_ip
-    @name = name
-    @port = port
-    @user_name = user_name
-    @password = password
-    @api_url = api_url
-    @verify_cert = verify_cert
-    @auth_token = auth_token
+  ####################################################################
+  # The Following vCenter calls will get vCenter information 
+  # for all tenants. these commands can only be ran as the root/default tenant
+  ####################################################################
+  def get_all_vcenters(auth=nil, cert=nil)
+    rest_get("#{@base_url}/compute/vcenters/bulk", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
 
-  def fqdn_or_ip
-    @fqdn_or_ip
-  end
-  
-  def name
-    @name
-  end
-  
-  def port
-    @port
-  end
-  
-  def user_name
-    @user_name
-  end
-  
-  def password
-    @password
-  end
-  
-  def api_url
-    @api_url
+  def get_vcenter(vcenter_id=nil, auth=nil, cert=nil)
+    check_vcenter(vcenter_id)
+    rest_get("#{@base_url}/compute/vcenters/#{vcenter_id}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
 
-  def add
+  def get_vcenter_hosts(vcenter_id=nil, auth=nil, cert=nil)
+    check_vcenter(vcenter_id)
+    rest_get("#{@base_url}/compute/vcenters/#{vcenter_id}/hosts", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+  end
+
+  def get_vcenter_clusters(vcenter_id=nil, auth=nil, cert=nil)
+    check_vcenter(vcenter_id)
+    rest_get("#{@base_url}/compute/vcenters/#{vcenter_id}/clusters", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+  end
+
+  def get_vcenter_datacenters(vcenter_id=nil, auth=nil, cert=nil)
+    check_vcenter(vcenter_id)
+    rest_get("#{@base_url}/compute/vcenters/#{vcenter_id}/vcenter-data-centers", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+  end
+
+  def find_vcenter_object(vcenter_search_hash=nil, auth=nil, cert=nil)
+    check_vcenter_object_hash(vcenter_search_hash)
+    rest_get("#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+  end
+
+  def add_vcenter(fqdn_or_ip=nil, name=nil, port=nil, user_name=nil, password=nil, tenant=nil, auth=nil, cert=nil)
+    check_vcenter_post(fqdn_or_ip, name, port, user_name, password)
     payload = {
-      ip_address: @fqdn_or_ip,
-      name: @name,
-      port_number: @port,
-      user_name: @user_name,
-      password: @password
-    }.to_json
-    
-    RestCall.rest_post(payload, @api_url, @verify_cert, @auth_token)
+        ip_address: fqdn_or_ip,
+        name: name,
+        port_number: port,
+        user_name: user_name,
+        password: password
+      }.to_json
+    rest_post(payload, "#{base_url}/tenants/#{@tenant_uid}/vcenters", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
 
-  def Vcenter.add_datacenter(name, api_url, verify_cert, auth_token)
+  def delete_vcenter(vcenter_id=nil, auth=nil, cert=nil)
+    check_vcenter(vcenter_id)
     payload = {
-      name: name
-    }.to_json
-    
-    RestCall.rest_post(payload, api_url, verify_cert, auth_token)
+      }.to_json
+    rest_post(payload, "#{base_url}/compute/vcenters/#{vcenter_id}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
 
-  def Vcenter.delete(api_url, verify_cert, auth_token)
-    payload = {
-    }.to_json
-    
-    RestCall.rest_post(payload, api_url, verify_cert, auth_token)
+  #############################################################
+  # Error Handling method to make sure params are there
+  ##############################################################
+  def check_vcenter(vcenter_id=nil)
+    if vcenter_id == nil
+        raise "Missing vCenter ID param (vcenter_id)"
+    end
   end
 
-end 
+  def check_vcenter_object_hash(vcenter_search_hash=nil)
+    if vcenter_search_hash == nil
+        raise "Missing vCenter Object to search as a param"
+    end
+  end
+
+  def check_vcenter_post(fqdn_or_ip=nil, name=nil, port=nil, user_name=nil, password=nil)
+    if fqdn_or_ip == nil || name == nil || port == nil || user_name == nil || password == nil
+      raise "Missing a Required Param of fqdn_or_ip, name, port, user_name, or password"
+    end
+  end
+
+end

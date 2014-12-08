@@ -1,15 +1,25 @@
 
 require "vipruby/viprbase"
+require "vipruby/objects/vcenter"
+require "vipruby/objects/storagesystem"
 
 class Vipr
   include ViprBase
+  include ViprVcenter
+  include ViprStorageProvider
+
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
   #SSL_VERSION = 'TLSv1'
   
-  def initialize
+  def initialize(base_url,user_name,password,verify_cert)
     @base_url = base_url
     @verify_cert = to_boolean(verify_cert)
     @auth_token = get_auth_token(user_name,password)
+    
+    #Every POST call requires a Tenant UID to place a the object.
+    #This variable gets the current logged in tenant information.
+    #Nothing else needs to be done if there is a single tenant configured for ViPR
+    #If resources need to be added to specific tenants, this variable must be overwritten
     @tenant_uid = get_tenant_uid['id']
   end
   
@@ -17,7 +27,6 @@ class Vipr
   #
   # @param host_payload [JSON] New host information
   # @return [JSON] returns host information
-  # @author Craig J Smith
   def add_host(host_payload, auth=nil, cert=nil)
     rest_post(host_payload, "#{base_url}/tenants/#{@tenant_uid}/hosts", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
@@ -27,7 +36,6 @@ class Vipr
   # @param initiator_payload [JSON] New initiator information in JSON format
   # @param host_href [STRING] HREF value of a host
   # @return [JSON] returns initiator information
-  # @author Craig J Smith
   def add_initiator(initiator_payload,host_href, auth=nil, cert=nil)
     rest_post(initiator_payload, "#{@base_url}#{host_href}/initiators", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
@@ -35,7 +43,6 @@ class Vipr
   # Get all Host objects in ViPR
   #
   # @return [JSON] returns a JSON collection of all hosts in ViPR
-  # @author Craig J Smith
   def get_all_hosts(auth=nil, cert=nil)
     rest_get("#{@base_url}/tenants/#{@tenant_uid}/hosts", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
@@ -44,7 +51,6 @@ class Vipr
   #
   # @param host_href [STRING] HREF value of a host
   # @return [JSON] returns host information
-  # @author Craig J Smith
   def get_host(host_href, auth=nil, cert=nil)
     rest_get("#{base_url}#{host_href}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
@@ -53,7 +59,6 @@ class Vipr
   #
   # @param host_href [STRING] HREF value of a host
   # @return [JSON] returns ... information
-  # @author Craig J Smith
   def deactivate_host(host_href, auth=nil, cert=nil)
     rest_post(nil, "#{base_url}#{host_href}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
@@ -74,7 +79,6 @@ class Vipr
   #
   # @param hostname [STRING] The name of the host to search for
   # @return [BOOLEAN] returns TRUE/FALSE 
-  # @author Craig J Smith
   def host_exists?(hostname, auth=nil, cert=nil)
     find_host_object(hostname)['resource'].any?
   end
@@ -83,70 +87,10 @@ class Vipr
   #
   # @param search_param [STRING] Value to search host for
   # @return [JSON] returns search results
-  # @author Craig J Smith
   def find_host_object(search_param, auth=nil, cert=nil)
     rest_get("#{@base_url}/compute/hosts/search?name=#{search_param}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
-
-  #############################################################
-  # The Following are all a bunch of vCenter calls
-  #
-  ##############################################################
-  def add_vcenter(fqdn_or_ip, name, port, user_name, password)
-    api_url = "#{base_url}/tenants/#{@tenant_uid}/vcenters"
-    Vcenter.new(fqdn_or_ip, name, port, user_name, password, api_url, @verify_cert, @auth_token).add
-  end
-
-  def get_all_vcenters
-    api_url = "#{@base_url}/compute/vcenters/bulk"
-    RestCall.rest_get(api_url, @verify_cert, @auth_token)
-  end
-
-  def get_vcenter(vcenter_id)
-    api_url = "#{@base_url}/compute/vcenters/#{vcenter_id}"
-    RestCall.rest_get(api_url, @verify_cert, @auth_token)
-  end
-
-  def get_vcenter_hosts(vcenter_id)
-    api_url = "#{@base_url}/compute/vcenters/#{vcenter_id}/hosts"
-    RestCall.rest_get(api_url, @verify_cert, @auth_token)
-  end
-
-  def get_vcenter_clusters(vcenter_id)
-    api_url = "#{@base_url}/compute/vcenters/#{vcenter_id}/clusters"
-    RestCall.rest_get(api_url, @verify_cert, @auth_token)
-  end
-
-  def get_vcenter_datacenters(vcenter_id)
-    api_url = "#{@base_url}/compute/vcenters/#{vcenter_id}/vcenter-data-centers"
-    RestCall.rest_get(api_url, @verify_cert, @auth_token)
-  end
-
-  ###This call adds a datacenter to ViPR, but DOES NOT add it to the actual vCenter
-  ###for some reason. When you perform a vCenter "rediscover", the new datacenter
-  ###is no longer there. Don't know..?
-  def add_vcenter_datacenter(vcenter_id, name)
-    api_url = "#{@base_url}/compute/vcenters/#{vcenter_id}/vcenter-data-centers"
-    Vcenter.add_datacenter(name, api_url, @verify_cert, @auth_token)
-  end
-
-  def find_vcenter_object(vcenter_search_hash)
-    api_url = "#{@base_url}/compute/vcenters/search?name=#{vcenter_search_hash}"
-    puts "this far"
-    RestCall.rest_get(api_url, @verify_cert, @auth_token)
-  end
-
-  def delete_vcenter(vcenter_id)
-    api_url = "#{base_url}/compute/vcenters/#{vcenter_id}/deactivate"
-    Vcenter.delete(api_url, @verify_cert, @auth_token)
-    #### Or we can call the RestClass directly since we don't
-    #### don't need to reference a ruby object
-    # payload = {
-    # }.to_json
-    # RestCall.rest_post(payload, api_url, @verify_cert, @auth_token)
-    ####
-  end
-
+=begin
   ##---------- ADD STORAGE ARRAYS --------------##
 
   # EMC VMAX and VNX for block storage system version support
@@ -222,7 +166,7 @@ class Vipr
   end  
 
 ####----------- END STORAGE ARRAYS ----------------######
-  
+=end
 end
 
 class Host
