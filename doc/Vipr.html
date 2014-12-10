@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Vipr
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Vipr.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (V)</a> &raquo;
+    
+    
+    <span class="title">Vipr</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Vipr
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Vipr</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="ViprBase.html" title="ViprBase (module)">ViprBase</a></span>, <span class='object_link'><a href="ViprHost.html" title="ViprHost (module)">ViprHost</a></span>, <span class='object_link'><a href="ViprStorageSystem.html" title="ViprStorageSystem (module)">ViprStorageSystem</a></span>, <span class='object_link'><a href="ViprVcenter.html" title="ViprVcenter (module)">ViprVcenter</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/vipruby/vipr.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#auth_token-instance_method" title="#auth_token (instance method)">- (Object) <strong>auth_token</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute auth_token.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#base_url-instance_method" title="#base_url (instance method)">- (Object) <strong>base_url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute base_url.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tenant_uid-instance_method" title="#tenant_uid (instance method)">- (Object) <strong>tenant_uid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute tenant_uid.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#verify_cert-instance_method" title="#verify_cert (instance method)">- (Object) <strong>verify_cert</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute verify_cert.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong>(base_url, user_name, password, verify_cert) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initializes a Vipr object that all methods can follow.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ViprHost.html" title="ViprHost (module)">ViprHost</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ViprHost.html#add_host-instance_method" title="ViprHost#add_host (method)">#add_host</a></span>, <span class='object_link'><a href="ViprHost.html#add_host_initiator-instance_method" title="ViprHost#add_host_initiator (method)">#add_host_initiator</a></span>, <span class='object_link'><a href="ViprHost.html#check_host_get-instance_method" title="ViprHost#check_host_get (method)">#check_host_get</a></span>, <span class='object_link'><a href="ViprHost.html#check_host_post-instance_method" title="ViprHost#check_host_post (method)">#check_host_post</a></span>, <span class='object_link'><a href="ViprHost.html#check_host_post_initiator-instance_method" title="ViprHost#check_host_post_initiator (method)">#check_host_post_initiator</a></span>, <span class='object_link'><a href="ViprHost.html#deactivate_host-instance_method" title="ViprHost#deactivate_host (method)">#deactivate_host</a></span>, <span class='object_link'><a href="ViprHost.html#find_host_object-instance_method" title="ViprHost#find_host_object (method)">#find_host_object</a></span>, <span class='object_link'><a href="ViprHost.html#generate_host_post_json-instance_method" title="ViprHost#generate_host_post_json (method)">#generate_host_post_json</a></span>, <span class='object_link'><a href="ViprHost.html#generate_initiators_json-instance_method" title="ViprHost#generate_initiators_json (method)">#generate_initiators_json</a></span>, <span class='object_link'><a href="ViprHost.html#get_all_hosts-instance_method" title="ViprHost#get_all_hosts (method)">#get_all_hosts</a></span>, <span class='object_link'><a href="ViprHost.html#get_host-instance_method" title="ViprHost#get_host (method)">#get_host</a></span>, <span class='object_link'><a href="ViprHost.html#host_exists%3F-instance_method" title="ViprHost#host_exists? (method)">#host_exists?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ViprStorageSystem.html" title="ViprStorageSystem (module)">ViprStorageSystem</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ViprStorageSystem.html#add_emc_block-instance_method" title="ViprStorageSystem#add_emc_block (method)">#add_emc_block</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_emc_file-instance_method" title="ViprStorageSystem#add_emc_file (method)">#add_emc_file</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_hitachi-instance_method" title="ViprStorageSystem#add_hitachi (method)">#add_hitachi</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_isilon-instance_method" title="ViprStorageSystem#add_isilon (method)">#add_isilon</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_netapp-instance_method" title="ViprStorageSystem#add_netapp (method)">#add_netapp</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_scaleio-instance_method" title="ViprStorageSystem#add_scaleio (method)">#add_scaleio</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_third_party_block-instance_method" title="ViprStorageSystem#add_third_party_block (method)">#add_third_party_block</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#add_vplex-instance_method" title="ViprStorageSystem#add_vplex (method)">#add_vplex</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#check_storage_provider_payload-instance_method" title="ViprStorageSystem#check_storage_provider_payload (method)">#check_storage_provider_payload</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#storage_provider_payload-instance_method" title="ViprStorageSystem#storage_provider_payload (method)">#storage_provider_payload</a></span>, <span class='object_link'><a href="ViprStorageSystem.html#storage_system_payload-instance_method" title="ViprStorageSystem#storage_system_payload (method)">#storage_system_payload</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ViprVcenter.html" title="ViprVcenter (module)">ViprVcenter</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ViprVcenter.html#add_vcenter-instance_method" title="ViprVcenter#add_vcenter (method)">#add_vcenter</a></span>, <span class='object_link'><a href="ViprVcenter.html#check_vcenter-instance_method" title="ViprVcenter#check_vcenter (method)">#check_vcenter</a></span>, <span class='object_link'><a href="ViprVcenter.html#check_vcenter_object_hash-instance_method" title="ViprVcenter#check_vcenter_object_hash (method)">#check_vcenter_object_hash</a></span>, <span class='object_link'><a href="ViprVcenter.html#check_vcenter_post-instance_method" title="ViprVcenter#check_vcenter_post (method)">#check_vcenter_post</a></span>, <span class='object_link'><a href="ViprVcenter.html#delete_vcenter-instance_method" title="ViprVcenter#delete_vcenter (method)">#delete_vcenter</a></span>, <span class='object_link'><a href="ViprVcenter.html#find_vcenter_object-instance_method" title="ViprVcenter#find_vcenter_object (method)">#find_vcenter_object</a></span>, <span class='object_link'><a href="ViprVcenter.html#get_all_vcenters-instance_method" title="ViprVcenter#get_all_vcenters (method)">#get_all_vcenters</a></span>, <span class='object_link'><a href="ViprVcenter.html#get_vcenter-instance_method" title="ViprVcenter#get_vcenter (method)">#get_vcenter</a></span>, <span class='object_link'><a href="ViprVcenter.html#get_vcenter_clusters-instance_method" title="ViprVcenter#get_vcenter_clusters (method)">#get_vcenter_clusters</a></span>, <span class='object_link'><a href="ViprVcenter.html#get_vcenter_datacenters-instance_method" title="ViprVcenter#get_vcenter_datacenters (method)">#get_vcenter_datacenters</a></span>, <span class='object_link'><a href="ViprVcenter.html#get_vcenter_hosts-instance_method" title="ViprVcenter#get_vcenter_hosts (method)">#get_vcenter_hosts</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ViprBase.html" title="ViprBase (module)">ViprBase</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ViprBase.html#generate_base_url-instance_method" title="ViprBase#generate_base_url (method)">#generate_base_url</a></span>, <span class='object_link'><a href="ViprBase.html#get_auth_token-instance_method" title="ViprBase#get_auth_token (method)">#get_auth_token</a></span>, <span class='object_link'><a href="ViprBase.html#get_tenant_uid-instance_method" title="ViprBase#get_tenant_uid (method)">#get_tenant_uid</a></span>, <span class='object_link'><a href="ViprBase.html#login-instance_method" title="ViprBase#login (method)">#login</a></span>, <span class='object_link'><a href="ViprBase.html#rest_get-instance_method" title="ViprBase#rest_get (method)">#rest_get</a></span>, <span class='object_link'><a href="ViprBase.html#rest_post-instance_method" title="ViprBase#rest_post (method)">#rest_post</a></span>, <span class='object_link'><a href="ViprBase.html#to_boolean-instance_method" title="ViprBase#to_boolean (method)">#to_boolean</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize</strong>(base_url, user_name, password, verify_cert) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initializes a Vipr object that all methods can follow.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>New Object</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_base_url'>base_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vipr.mydomain.com</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_user_name'>user_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>root</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mypw</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_verify_cert'>verify_cert</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='id identifier rubyid_vipr'>vipr</span> <span class='op'>=</span> <span class='const'>Vipr</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_base_url'>base_url</span><span class='comma'>,</span><span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span><span class='id identifier rubyid_password'>password</span><span class='comma'>,</span><span class='id identifier rubyid_verify_cert'>verify_cert</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>base_url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The IP address or FQDN of the ViPR appliance. Do not include
+&#39;https&#39; or port numbers</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>user_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Username used to log into ViPR</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Password used to log into ViPR</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>verify_cert</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Should the cert be SSL verified? Setting it to false will work for
+development purposes. Should be set to true for production</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_base_url'>base_url</span><span class='comma'>,</span><span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span><span class='id identifier rubyid_password'>password</span><span class='comma'>,</span><span class='id identifier rubyid_verify_cert'>verify_cert</span><span class='rparen'>)</span>
+  <span class='ivar'>@base_url</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_base_url'>generate_base_url</span><span class='lparen'>(</span><span class='id identifier rubyid_base_url'>base_url</span><span class='rparen'>)</span>
+  <span class='ivar'>@verify_cert</span> <span class='op'>=</span> <span class='id identifier rubyid_to_boolean'>to_boolean</span><span class='lparen'>(</span><span class='id identifier rubyid_verify_cert'>verify_cert</span><span class='rparen'>)</span>
+  <span class='ivar'>@auth_token</span> <span class='op'>=</span> <span class='id identifier rubyid_get_auth_token'>get_auth_token</span><span class='lparen'>(</span><span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+  
+  <span class='comment'># @note Every POST call requires a Tenant UID to create an object.
+</span>  <span class='comment'># This variable gets the current logged in tenant information.
+</span>  <span class='comment'># Nothing else needs to be done if there is a single tenant configured for ViPR
+</span>  <span class='comment'># If resources need to be added to specific tenants, this variable must be overwritten
+</span>  <span class='comment'># by specifying the tenant_uid
+</span>  <span class='ivar'>@tenant_uid</span> <span class='op'>=</span> <span class='id identifier rubyid_get_tenant_uid'>get_tenant_uid</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="auth_token=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="auth_token-instance_method">
+  
+    - (<tt>Object</tt>) <strong>auth_token</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute auth_token</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_auth_token'>auth_token</span>
+  <span class='ivar'>@auth_token</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="base_url=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="base_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>base_url</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute base_url</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_base_url'>base_url</span>
+  <span class='ivar'>@base_url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="tenant_uid=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="tenant_uid-instance_method">
+  
+    - (<tt>Object</tt>) <strong>tenant_uid</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute tenant_uid</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_tenant_uid'>tenant_uid</span>
+  <span class='ivar'>@tenant_uid</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="verify_cert=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="verify_cert-instance_method">
+  
+    - (<tt>Object</tt>) <strong>verify_cert</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute verify_cert</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_verify_cert'>verify_cert</span>
+  <span class='ivar'>@verify_cert</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Dec  9 23:15:48 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>

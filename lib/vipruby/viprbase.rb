@@ -56,7 +56,7 @@ module ViprBase
   end
   
   def generate_base_url(ip_or_fqdn)
-    "https://#{ip_or_fqdn}:4443"
+    return "https://#{ip_or_fqdn}:4443"
   end
   
   # Get User's Authentication Token

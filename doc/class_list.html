@@ -20,7 +20,11 @@
   </head>
   <body>
     <script type="text/javascript" charset="utf-8">
-      if (window.top.frames.main) {
+      var hasFrames = false;
+      try {
+        hasFrames = window.top.frames.main ? true : false;
+      } catch (e) { }
+      if (hasFrames) {
         document.getElementById('base_target').target = 'main';
         document.body.className = 'frames';
       }
@@ -46,7 +50,7 @@
 
       <ul id="full_list" class="class">
         <li><span class='object_link'><a href="top-level-namespace.html" title="Top Level Namespace (root)">Top Level Namespace</a></span></li>
-<li><span class='object_link'><a href="EMCblock.html" title="EMCblock (module)">EMCblock</a></span><small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="Hitachi.html" title="Hitachi (class)">Hitachi</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="Host.html" title="Host (class)">Host</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="ThirdPartyBlock.html" title="ThirdPartyBlock (class)">ThirdPartyBlock</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="Vcenter.html" title="Vcenter (class)">Vcenter</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="ViprBase.html" title="ViprBase (module)">ViprBase</a></span><small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="Vipruby.html" title="Vipruby (class)">Vipruby</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="Vplex.html" title="Vplex (class)">Vplex</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li>
+<li><span class='object_link'><a href="Vipr.html" title="Vipr (class)">Vipr</a></span> &lt; Object<small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="ViprBase.html" title="ViprBase (module)">ViprBase</a></span><small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="ViprHost.html" title="ViprHost (module)">ViprHost</a></span><small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="ViprStorageSystem.html" title="ViprStorageSystem (module)">ViprStorageSystem</a></span><small class='search_info'>Top Level Namespace</small></li><li><span class='object_link'><a href="ViprVcenter.html" title="ViprVcenter (module)">ViprVcenter</a></span><small class='search_info'>Top Level Namespace</small></li><li><a class='toggle'></a> <span class='object_link'><a href="Vipruby.html" title="Vipruby (module)">Vipruby</a></span><small class='search_info'>Top Level Namespace</small></li><ul><li><span class='object_link'><a href="Vipruby/Auth.html" title="Vipruby::Auth (class)">Auth</a></span> &lt; Object<small class='search_info'>Vipruby</small></li></ul>
 
       </ul>
     </div>

@@ -18,17 +18,17 @@ module ViprHost
         return payload
     end
       
-    def generate_initiators_json
+    def generate_initiators_json(protocol, initiator_node, initiator_port)
         initiator_json = []
-        @initiators_port.each do |initiator|
-          initiator_json <<
-          {
-            protocol: @protocol.upcase,
-            initiator_port: initiator,
-            initiator_node: @initiator_node
-          }.to_json
+        initiator_port.each do |initiator|
+            initiator_json << 
+            {
+                protocol: protocol,
+                initiator_node: initiator_node,
+                initiator_port: initiator
+            }.to_json
         end
-        initiator_json
+        return initiator_json
     end
     # Add a host to ViPR
     #
@@ -37,8 +37,7 @@ module ViprHost
     # @author Kendrick Coleman
     def add_host(host_type=nil, ip_or_dns=nil, name=nil, user_name=nil, password=nil, port=nil, use_ssl=nil, discoverable=nil, auth=nil, cert=nil)
         check_host_post(host_type, ip_or_dns, name, user_name, password)
-        host_type.camelize
-        puts host_type
+        host_type = host_type.split('_').collect(&:capitalize).join
 
         if host_type == "Windows" 
             use_ssl.nil? ? use_ssl = false : use_ssl
@@ -61,23 +60,33 @@ module ViprHost
         end
         rest_post(generate_host_post_json(host_type, ip_or_dns, name, port, user_name, password, use_ssl, discoverable), "#{@base_url}/tenants/#{@tenant_uid}/hosts", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
     end
-=begin 
+
     # Add an initiator to a host in ViPR
     #
     # @param initiator_payload [JSON] New initiator information in JSON format
     # @param host_href [STRING] HREF value of a host
     # @return [JSON] returns initiator information
     # @author Craig J Smith
-    def add_initiator(initiator_payload,host_href, auth=nil, cert=nil)
-      rest_post(initiator_payload, "#{@base_url}#{host_href}/initiators", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+    def add_host_initiator(host_id=nil, protocol=nil, initiator_port=nil, initiator_node=nil, auth=nil, cert=nil)
+        check_host_get(host_id)
+        check_host_post_initiator(protocol, initiator_port)
+
+        protocol = protocol.upcase
+        if protocol == "ISCSI"
+            protocol = "iSCSI"
+        end
+        initiator_payload_array = generate_initiators_json(protocol, initiator_node, initiator_port)
+        initiator_payload_array.each do |i|
+            rest_post(i, "#{@base_url}/compute/hosts/#{host_id}/initiators", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+        end
     end
   
     # Get all Host objects in ViPR
     #
-    # @return [JSON] returns a JSON collection of all hosts in ViPR
+    # @return [JSON] returns a JSON collection of all hosts in ViPR for a particular tenant
     # @author Craig J Smith
     def get_all_hosts(auth=nil, cert=nil)
-      rest_get("#{@base_url}/tenants/#{@tenant_uid}/hosts", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+        rest_get("#{@base_url}/tenants/#{@tenant_uid}/hosts", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
     end
   
     # Get an individual host's details in ViPR
@@ -85,8 +94,9 @@ module ViprHost
     # @param host_href [STRING] HREF value of a host
     # @return [JSON] returns host information
     # @author Craig J Smith
-    def get_host(host_href, auth=nil, cert=nil)
-      rest_get("#{@base_url}#{host_href}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+    def get_host(host_id=nil, auth=nil, cert=nil)
+        check_host_get(host_id)
+        rest_get("#{@base_url}/compute/hosts/#{host_id}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
     end
   
     # Deactive a host
@@ -94,29 +104,26 @@ module ViprHost
     # @param host_href [STRING] HREF value of a host
     # @return [JSON] returns ... information
     # @author Craig J Smith
-    def deactivate_host(host_href, auth=nil, cert=nil)
-      rest_post(nil, "#{@base_url}#{host_href}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+    def deactivate_host(host_id=nil, auth=nil, cert=nil)
+        check_host_get(host_id)
+        rest_post(nil, "#{@base_url}/compute/hosts/#{host_id}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
     end
-
-    # Add a host and it's initiators (Need to change param values)
-    #
-    # @param host [OBJECT] host object
-    # @return [JSON] returns host information
-    # @author Craig J Smith
-    #def add_host_and_initiators(host)
-    #  host_href = add_host(host.generate_json)['resource']['link']['href']
-    #  host.generate_inistiators_json.each do |initiator|
-    #    add_initiator(initiator,host_href)
-    #  end
-    #end
   
     # Detirmine if a host already exists in ViPR
     #
     # @param hostname [STRING] The name of the host to search for
     # @return [BOOLEAN] returns TRUE/FALSE 
-    # @author Craig J Smith
+    # @author Kendrick Coleman
     def host_exists?(hostname, auth=nil, cert=nil)
-      find_host_object(hostname)['resource'].any?
+        hostname = hostname.downcase
+        host_array = []
+        hosts = get_all_hosts
+        hosts.each do |key, value|
+          value.each do |k|
+            host_array << k['name'].to_s.downcase
+          end
+        end
+       host_array.include?(hostname) 
     end
   
     # Find and return query results for a host in ViPR
@@ -127,13 +134,25 @@ module ViprHost
     def find_host_object(search_param, auth=nil, cert=nil)
       rest_get("#{@base_url}/compute/hosts/search?name=#{search_param}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
     end
-=end
+
     #############################################################
     # Error Handling method to make sure params are there
     ##############################################################
     def check_host_post(host_type, ip_or_dns, name, user_name, password)
       if host_type == nil || ip_or_dns == nil || name == nil
           raise "Missing a Required param (host_type, ip_or_dns, name)"
+      end
+    end
+
+    def check_host_get(host_id)
+      if host_id == nil
+          raise "Missing the Required param (host_id). Find the host_id by using the get_all_hosts method."
+      end
+    end
+
+    def check_host_post_initiator(protocol, initiator_port)
+      if protocol== nil || initiator_port == nil
+          raise "Missing the Required param (protocol or initiator_port)."
       end
     end
 

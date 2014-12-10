@@ -1,0 +1,1364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ViprHost
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ViprHost.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (V)</a> &raquo;
+    
+    
+    <span class="title">ViprHost</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ViprHost
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="Vipr.html" title="Vipr (class)">Vipr</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/vipruby/objects/host.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_host-instance_method" title="#add_host (instance method)">- (JSON) <strong>add_host</strong>(host_type = nil, ip_or_dns = nil, name = nil, user_name = nil, password = nil, port = nil, use_ssl = nil, discoverable = nil, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a host to ViPR.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_host_initiator-instance_method" title="#add_host_initiator (instance method)">- (JSON) <strong>add_host_initiator</strong>(host_id = nil, protocol = nil, initiator_port = nil, initiator_node = nil, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add an initiator to a host in ViPR.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_host_get-instance_method" title="#check_host_get (instance method)">- (Object) <strong>check_host_get</strong>(host_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_host_post-instance_method" title="#check_host_post (instance method)">- (Object) <strong>check_host_post</strong>(host_type, ip_or_dns, name, user_name, password) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Error Handling method to make sure params are there.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_host_post_initiator-instance_method" title="#check_host_post_initiator (instance method)">- (Object) <strong>check_host_post_initiator</strong>(protocol, initiator_port) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deactivate_host-instance_method" title="#deactivate_host (instance method)">- (JSON) <strong>deactivate_host</strong>(host_id = nil, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deactive a host.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_host_object-instance_method" title="#find_host_object (instance method)">- (JSON) <strong>find_host_object</strong>(search_param, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Find and return query results for a host in ViPR.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_host_post_json-instance_method" title="#generate_host_post_json (instance method)">- (Object) <strong>generate_host_post_json</strong>(host_type, ip_or_dns, name, port, user_name, password, use_ssl, discoverable) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_initiators_json-instance_method" title="#generate_initiators_json (instance method)">- (Object) <strong>generate_initiators_json</strong>(protocol, initiator_node, initiator_port) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_all_hosts-instance_method" title="#get_all_hosts (instance method)">- (JSON) <strong>get_all_hosts</strong>(auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all Host objects in ViPR.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_host-instance_method" title="#get_host (instance method)">- (JSON) <strong>get_host</strong>(host_id = nil, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get an individual host&#39;s details in ViPR.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#host_exists%3F-instance_method" title="#host_exists? (instance method)">- (BOOLEAN) <strong>host_exists?</strong>(hostname, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Detirmine if a host already exists in ViPR.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_host-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>add_host</strong>(host_type = nil, ip_or_dns = nil, name = nil, user_name = nil, password = nil, port = nil, use_ssl = nil, discoverable = nil, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a host to ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_payload</span>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Kendrick Coleman</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_host'>add_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host_type'>host_type</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_discoverable'>discoverable</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check_host_post'>check_host_post</span><span class='lparen'>(</span><span class='id identifier rubyid_host_type'>host_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_host_type'>host_type</span> <span class='op'>=</span> <span class='id identifier rubyid_host_type'>host_type</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:capitalize</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_host_type'>host_type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Windows</span><span class='tstring_end'>&quot;</span></span> 
+        <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span> <span class='op'>=</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span> <span class='op'>==</span> <span class='kw'>true</span>
+            <span class='id identifier rubyid_port'>port</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>5986</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_port'>port</span>
+        <span class='kw'>else</span>
+            <span class='id identifier rubyid_port'>port</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>5985</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_port'>port</span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_discoverable'>discoverable</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_discoverable'>discoverable</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='id identifier rubyid_discoverable'>discoverable</span>
+        <span class='id identifier rubyid_user_name'>user_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_user_name'>user_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_user_name'>user_name</span>
+        <span class='id identifier rubyid_password'>password</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#1Password</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_password'>password</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_host_type'>host_type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Linux</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span> <span class='op'>=</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span>
+        <span class='id identifier rubyid_port'>port</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>22</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='id identifier rubyid_port'>port</span>
+        <span class='id identifier rubyid_discoverable'>discoverable</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_discoverable'>discoverable</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='id identifier rubyid_discoverable'>discoverable</span>
+        <span class='id identifier rubyid_user_name'>user_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_user_name'>user_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_user_name'>user_name</span>
+        <span class='id identifier rubyid_password'>password</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#1Password</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_password'>password</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_host_type'>host_type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hpux</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_host_type'>host_type</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>HPUX</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='id identifier rubyid_generate_host_post_json'>generate_host_post_json</span><span class='lparen'>(</span><span class='id identifier rubyid_host_type'>host_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='comma'>,</span> <span class='id identifier rubyid_discoverable'>discoverable</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_host_initiator-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>add_host_initiator</strong>(host_id = nil, protocol = nil, initiator_port = nil, initiator_node = nil, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add an initiator to a host in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>initiator_payload</span>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New initiator information in JSON format</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host_href</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HREF value of a host</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns initiator information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_host_initiator'>add_host_initiator</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_protocol'>protocol</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_port'>initiator_port</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_node'>initiator_node</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check_host_get'>check_host_get</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check_host_post_initiator'>check_host_post_initiator</span><span class='lparen'>(</span><span class='id identifier rubyid_protocol'>protocol</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_port'>initiator_port</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_protocol'>protocol</span> <span class='op'>=</span> <span class='id identifier rubyid_protocol'>protocol</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_protocol'>protocol</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ISCSI</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_protocol'>protocol</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>iSCSI</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_initiator_payload_array'>initiator_payload_array</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_initiators_json'>generate_initiators_json</span><span class='lparen'>(</span><span class='id identifier rubyid_protocol'>protocol</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_node'>initiator_node</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_port'>initiator_port</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_initiator_payload_array'>initiator_payload_array</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+        <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/hosts/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_id'>host_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/initiators</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_host_get-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_host_get</strong>(host_id) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147
+148
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 147</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_host_get'>check_host_get</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_host_id'>host_id</span> <span class='op'>==</span> <span class='kw'>nil</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing the Required param (host_id). Find the host_id by using the get_all_hosts method.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_host_post-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_host_post</strong>(host_type, ip_or_dns, name, user_name, password) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Error Handling method to make sure params are there</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141
+142
+143
+144
+145</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 141</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_host_post'>check_host_post</span><span class='lparen'>(</span><span class='id identifier rubyid_host_type'>host_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_host_type'>host_type</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='op'>||</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='op'>||</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='kw'>nil</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing a Required param (host_type, ip_or_dns, name)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_host_post_initiator-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_host_post_initiator</strong>(protocol, initiator_port) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153
+154
+155
+156
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_host_post_initiator'>check_host_post_initiator</span><span class='lparen'>(</span><span class='id identifier rubyid_protocol'>protocol</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_port'>initiator_port</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_protocol'>protocol</span><span class='op'>==</span> <span class='kw'>nil</span> <span class='op'>||</span> <span class='id identifier rubyid_initiator_port'>initiator_port</span> <span class='op'>==</span> <span class='kw'>nil</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing the Required param (protocol or initiator_port).</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deactivate_host-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>deactivate_host</strong>(host_id = nil, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deactive a host</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_href</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HREF value of a host</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns … information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 107</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deactivate_host'>deactivate_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check_host_get'>check_host_get</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/hosts/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_id'>host_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/deactivate</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_host_object-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>find_host_object</strong>(search_param, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Find and return query results for a host in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>search_param</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Value to search host for</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns search results</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_host_object'>find_host_object</span><span class='lparen'>(</span><span class='id identifier rubyid_search_param'>search_param</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/hosts/search?name=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_search_param'>search_param</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_host_post_json-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate_host_post_json</strong>(host_type, ip_or_dns, name, port, user_name, password, use_ssl, discoverable) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_host_post_json'>generate_host_post_json</span><span class='lparen'>(</span><span class='id identifier rubyid_host_type'>host_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='comma'>,</span> <span class='id identifier rubyid_discoverable'>discoverable</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+        <span class='label'>type:</span> <span class='id identifier rubyid_host_type'>host_type</span><span class='comma'>,</span>
+        <span class='label'>host_name:</span> <span class='id identifier rubyid_ip_or_dns'>ip_or_dns</span><span class='comma'>,</span>
+        <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+        <span class='label'>port_number:</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span>
+        <span class='label'>user_name:</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span>
+        <span class='label'>password:</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span>
+        <span class='label'>use_ssl:</span> <span class='id identifier rubyid_use_ssl'>use_ssl</span><span class='comma'>,</span>
+        <span class='label'>discoverable:</span> <span class='id identifier rubyid_discoverable'>discoverable</span>
+    <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+
+    <span class='kw'>return</span> <span class='id identifier rubyid_payload'>payload</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_initiators_json-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate_initiators_json</strong>(protocol, initiator_node, initiator_port) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_initiators_json'>generate_initiators_json</span><span class='lparen'>(</span><span class='id identifier rubyid_protocol'>protocol</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_node'>initiator_node</span><span class='comma'>,</span> <span class='id identifier rubyid_initiator_port'>initiator_port</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_initiator_json'>initiator_json</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_initiator_port'>initiator_port</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_initiator'>initiator</span><span class='op'>|</span>
+        <span class='id identifier rubyid_initiator_json'>initiator_json</span> <span class='op'>&lt;&lt;</span> 
+        <span class='lbrace'>{</span>
+            <span class='label'>protocol:</span> <span class='id identifier rubyid_protocol'>protocol</span><span class='comma'>,</span>
+            <span class='label'>initiator_node:</span> <span class='id identifier rubyid_initiator_node'>initiator_node</span><span class='comma'>,</span>
+            <span class='label'>initiator_port:</span> <span class='id identifier rubyid_initiator'>initiator</span>
+        <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+    <span class='kw'>end</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_initiator_json'>initiator_json</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_all_hosts-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_all_hosts</strong>(auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all Host objects in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns a JSON collection of all hosts in ViPR for a particular tenant</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_all_hosts'>get_all_hosts</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tenants/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@tenant_uid</span><span class='embexpr_end'>}</span><span class='tstring_content'>/hosts</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_host-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_host</strong>(host_id = nil, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get an individual host&#39;s details in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_href</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>HREF value of a host</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns host information</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Craig J Smith</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 97</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_host'>get_host</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_check_host_get'>check_host_get</span><span class='lparen'>(</span><span class='id identifier rubyid_host_id'>host_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/compute/hosts/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host_id'>host_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="host_exists?-instance_method">
+  
+    - (<tt>BOOLEAN</tt>) <strong>host_exists?</strong>(hostname, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Detirmine if a host already exists in ViPR</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hostname</span>
+      
+      
+        <span class='type'>(<tt>STRING</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the host to search for</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>BOOLEAN</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns TRUE/FALSE</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Kendrick Coleman</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/host.rb', line 117</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_host_exists?'>host_exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_hostname'>hostname</span> <span class='op'>=</span> <span class='id identifier rubyid_hostname'>hostname</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+    <span class='id identifier rubyid_host_array'>host_array</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_hosts'>hosts</span> <span class='op'>=</span> <span class='id identifier rubyid_get_all_hosts'>get_all_hosts</span>
+    <span class='id identifier rubyid_hosts'>hosts</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+      <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='op'>|</span>
+        <span class='id identifier rubyid_host_array'>host_array</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_k'>k</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>name</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+   <span class='id identifier rubyid_host_array'>host_array</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='rparen'>)</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Dec  9 23:15:47 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>

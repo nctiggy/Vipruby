@@ -47,12 +47,12 @@ module ViprStorageSystem
 	end
 
 	# EMC VMAX and VNX for block storage system version support
-	# => For supported versions, see the EMC ViPR Support Matrix on the EMC Community Network (community.emc.com)
+	# 	For supported versions, see the EMC ViPR Support Matrix on the EMC Community Network (community.emc.com)
 	# The EMC SMI-S Provider (a component of EMC Solutions Enabler) is required to use VMAX storage or VNX block. 
 	# The following information is required to verify & add the SMI-S provider storage systems to ViPR:
-	# => SMI-S Provider host address
-	# => SMI-S Provider credentials (default is admin/#1Password) 
-	# => SMI-S Provider port (default is 5989)
+	# 	SMI-S Provider host address
+	# 	SMI-S Provider credentials (default is admin/#1Password) 
+	# 	SMI-S Provider port (default is 5989)
 	#
 	# @param name [String] the name of the device
 	# @param ip_address [string] the ip address of the device
@@ -68,8 +68,8 @@ module ViprStorageSystem
     # For supported versions, see the EMC ViPR Support Matrix on the EMC Community Network (community.emc.com).
     # Hitachi HiCommand Device Manager is required to use HDS storage with ViPR. 
     # You need to obtain the following information to configure and add the Hitachi HiCommand Device manager to ViPR:
-    # => A host or virtual machine for HiCommand Device manager setup
-    # => HiCommand Device Manager license, host address, credentials, and host port (default is 2001) 
+    # 	A host or virtual machine for HiCommand Device manager setup
+    # 	HiCommand Device Manager license, host address, credentials, and host port (default is 2001) 
     #
     # @param name [String] the name of the device
 	# @param ip_address [string] the ip address of the device
