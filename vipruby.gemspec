@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Vipruby::VERSION
   s.date        = Date.today.to_s
   s.summary     = "A Ruby Library for EMC's ViPR"
-  s.description = "Currently limited to host and initiator add functions along with vCenter and storage additions"
+  s.description = "A Ruby implementation to add & gather information from Storage Arrays, vCenter, and Compute Hosts"
   s.authors     = ["Craig J Smith", "Kendrick Coleman"]
   s.email       = 'nctiggy@gmail.com'
   s.require_paths = %w[lib]
