@@ -1,8 +1,7 @@
 lib/vipruby.rb f50266974d35c9be858cb4cd9cf3f289a05ffa86
-lib/vipruby/vipr.rb baaf18e004ae4b3b3f33dcb60f309310807c119c
-lib/vipruby/auth.rb 045c68504c28d79691d4c5b1ea6506cea170f939
-lib/vipruby/version.rb 04078b71a8a67195551ef3f635b637336d059582
-lib/vipruby/viprbase.rb 08810a232d262d7f2ed9ce412de0743d309d9fad
-lib/vipruby/objects/host.rb 4221e097f1f31d2b1b9285d3e1edc3d0eba06df8
-lib/vipruby/objects/vcenter.rb d046d345f86715cf90191f3d8e7f8c69e984c524
-lib/vipruby/objects/storagesystem.rb b1ac95cf9924659472a134bf6eccc2ec44f0aaae
+lib/vipruby/vipr.rb fce8ed6f48688aec347c359b66e17d1327cefe2a
+lib/vipruby/version.rb 0b8854e4974373799887c6e7adf5120737b75a72
+lib/vipruby/viprbase.rb 5348c87ee280395164e455ac2dad30e23239babf
+lib/vipruby/objects/host.rb 3b3d0b5cb4875013b0570c4d96ec5d0a5aaaca98
+lib/vipruby/objects/vcenter.rb 4959dda48861e6de9f9fe162f6a9efda9c6956e8
+lib/vipruby/objects/storagesystem.rb 477f40c58a8d62ec4ff602c67d236b108f0247fe

@@ -1,13 +1,14 @@
 require 'rest-client'
 require 'json'
 
+#Base methods used for all operations such as logging in and performing API calls
 module ViprBase
   
   # Generic API post call
   #
   # @param payload [JSON] the JSON payload to be posted
   # @param api_url [string] the full API URL path
-  # @return [JSON] the object converted into JSON format.
+  # @return [Hash] the object converted into Hash format and can be parsed with object[0] or object['id'] notation
   def rest_post(payload, api_url, auth=nil, cert=nil)
     JSON.parse(RestClient::Request.execute(method: :post,
          url: api_url,
@@ -23,7 +24,7 @@ module ViprBase
   # Generic API get call
   #
   # @param api_url [string] the full API URL path
-  # @return [JSON] the object converted into JSON format.
+  # @return [Hash] the object converted into Hash format and can be parsed with object[0] or object['id'] notation
   def rest_get(api_url, auth=nil, cert=nil)
     JSON.parse(RestClient::Request.execute(method: :get,
       url: api_url,
@@ -36,7 +37,7 @@ module ViprBase
   
   # Get the current users Tenant UID
   #
-  # @return [array] HTML return with the Tenant UID ['id].
+  # @return [Hash] Hash return with the Tenant UID ['id'].
   def get_tenant_uid(base=nil, auth=nil, cert=nil)
     rest_get(base.nil? ? @base_url + "/tenant" : base + "/tenant", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
   end
@@ -55,6 +56,10 @@ module ViprBase
     )
   end
   
+  # Generate the URL for standard ViPR instances using https: and port :443
+  #
+  # @param ip_or_fqdn [string] String representation of the IP Address or Fully Qualified Domain Name of the ViPR instance
+  # @return [strong] returns the full URL for API called
   def generate_base_url(ip_or_fqdn)
     return "https://#{ip_or_fqdn}:4443"
   end

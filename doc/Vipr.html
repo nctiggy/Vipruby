@@ -103,7 +103,19 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The base class for the gem. Every subsequent method relies on creating an
+object from this class</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -131,7 +143,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute auth_token.</p>
+<p>required params used for almost every single method.</p>
 </div></span>
   
 </li>
@@ -158,7 +170,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute base_url.</p>
+<p>required params used for almost every single method.</p>
 </div></span>
   
 </li>
@@ -185,7 +197,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute tenant_uid.</p>
+<p>required params used for almost every single method.</p>
 </div></span>
   
 </li>
@@ -212,7 +224,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute verify_cert.</p>
+<p>required params used for almost every single method.</p>
 </div></span>
   
 </li>
@@ -319,6 +331,18 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Every POST call requires a Tenant UID to create an object. This variable
+gets the current logged in tenant information. Nothing else needs to be
+done if there is a single tenant configured for ViPR If resources need to
+be added to specific tenants, this variable must be overwritten by
+specifying the tenant_uid</p>
+</div>
+  </div>
+
+
 <p>Initializes a Vipr object that all methods can follow.</p>
 
 
@@ -331,7 +355,7 @@
     
       
         <p class="example_title"><div class='inline'>
-<p>New Object</p>
+<p>New Vipruby Object</p>
 </div></p>
       
       <pre class="example code"><code><span class='id identifier rubyid_base_url'>base_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vipr.mydomain.com</span><span class='tstring_end'>&#39;</span></span>
@@ -419,33 +443,21 @@ development purposes. Should be set to true for production</p>
       <pre class="lines">
 
 
-29
-30
-31
-32
-33
-34
-35
-36
-37
 38
 39
-40</pre>
+40
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_base_url'>base_url</span><span class='comma'>,</span><span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span><span class='id identifier rubyid_password'>password</span><span class='comma'>,</span><span class='id identifier rubyid_verify_cert'>verify_cert</span><span class='rparen'>)</span>
   <span class='ivar'>@base_url</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_base_url'>generate_base_url</span><span class='lparen'>(</span><span class='id identifier rubyid_base_url'>base_url</span><span class='rparen'>)</span>
   <span class='ivar'>@verify_cert</span> <span class='op'>=</span> <span class='id identifier rubyid_to_boolean'>to_boolean</span><span class='lparen'>(</span><span class='id identifier rubyid_verify_cert'>verify_cert</span><span class='rparen'>)</span>
   <span class='ivar'>@auth_token</span> <span class='op'>=</span> <span class='id identifier rubyid_get_auth_token'>get_auth_token</span><span class='lparen'>(</span><span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
-  
-  <span class='comment'># @note Every POST call requires a Tenant UID to create an object.
-</span>  <span class='comment'># This variable gets the current logged in tenant information.
-</span>  <span class='comment'># Nothing else needs to be done if there is a single tenant configured for ViPR
-</span>  <span class='comment'># If resources need to be added to specific tenants, this variable must be overwritten
-</span>  <span class='comment'># by specifying the tenant_uid
-</span>  <span class='ivar'>@tenant_uid</span> <span class='op'>=</span> <span class='id identifier rubyid_get_tenant_uid'>get_tenant_uid</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@tenant_uid</span> <span class='op'>=</span> <span class='id identifier rubyid_get_tenant_uid'>get_tenant_uid</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -471,7 +483,7 @@ development purposes. Should be set to true for production</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute auth_token</p>
+<p>required params used for almost every single method</p>
 
 
   </div>
@@ -485,12 +497,12 @@ development purposes. Should be set to true for production</p>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+15
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auth_token'>auth_token</span>
   <span class='ivar'>@auth_token</span>
@@ -514,7 +526,7 @@ development purposes. Should be set to true for production</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute base_url</p>
+<p>required params used for almost every single method</p>
 
 
   </div>
@@ -528,12 +540,12 @@ development purposes. Should be set to true for production</p>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+15
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_base_url'>base_url</span>
   <span class='ivar'>@base_url</span>
@@ -557,7 +569,7 @@ development purposes. Should be set to true for production</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute tenant_uid</p>
+<p>required params used for almost every single method</p>
 
 
   </div>
@@ -571,12 +583,12 @@ development purposes. Should be set to true for production</p>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+15
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tenant_uid'>tenant_uid</span>
   <span class='ivar'>@tenant_uid</span>
@@ -600,7 +612,7 @@ development purposes. Should be set to true for production</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute verify_cert</p>
+<p>required params used for almost every single method</p>
 
 
   </div>
@@ -614,12 +626,12 @@ development purposes. Should be set to true for production</p>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+15
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/vipr.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_verify_cert'>verify_cert</span>
   <span class='ivar'>@verify_cert</span>
@@ -635,7 +647,7 @@ development purposes. Should be set to true for production</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Dec  9 23:15:48 2014 by
+  Generated on Mon Dec 15 13:17:38 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.2).
 </div>
