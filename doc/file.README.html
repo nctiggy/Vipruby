@@ -65,79 +65,54 @@
 <p><a href="http://badge.fury.io/rb/vipruby"><img
 src="https://badge.fury.io/rb/vipruby.svg"></a></p>
 
-<h1 id="label-Vipruby+0.1.4">Vipruby 0.1.4</h1>
+<h1 id="label-ViPRuby">ViPRuby</h1>
 
-<p>Ruby Library for ViPR</p>
+<h2 id="label-23-23-23+A+Ruby+library+for+EMCs+ViPR">### A Ruby library for EMCs ViPR</h2>
+
+<h2 id="label-How+to+use-3A">How to use:</h2>
 
 <h4 id="label-Install+and+usage-3A">Install and usage:</h4>
 
 <p>gem install vipruby<br> require &#39;vipruby&#39;</p>
 
-<h4 id="label-Example+usage+files-3A">Example usage files:</h4>
+<h4 id="label-Create+a+ViPR+object-3A">Create a ViPR object:</h4>
 
-<p>-SBUX.rb<br> -settings.conf</p>
+<pre class="code ruby"><code class="ruby">```ruby
+base_url = &#39;vipr.mydomain.com&#39;
+user_name = &#39;root&#39;
+password = &#39;mypw&#39;
+verify_cert = false
 
-<h4 id="label-Create+a+vipr+object-3A">Create a vipr object:</h4>
+vipr = Vipr.new(base_url,user_name,password,verify_cert)
+```</code></pre>
 
-<pre class="code ruby"><code class="ruby">vipr = Vipruby.new([base_url]:[port],[user],[password])</code></pre>
+<h4 id="label-Methods+Exist+for-3A">Methods Exist for:</h4>
 
-<h4 id="label-Create+a+host+object-3A">Create a host object:</h4>
+<pre class="code ruby"><code class="ruby">1. vCenter
+	* Add vCenters (to root or specific tenant)
+	* Remove vCenters
+	* Get vCenter Information
+2. Hosts
+	* Add Hosts
+	* Add Host Initators
+	* Remove Hosts
+	* Get Host Information
+3. Storage Systems
+	* Add Storage Arrays</code></pre>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='const'>Host</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>other</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='label'>name:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='label'>fqdn:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_fqdn'>fqdn</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='label'>initiator_node:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_wwnn'>wwnn</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='label'>initiators_port:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>WWPN1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>WWPN2</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span><span class='label'>protocol:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_fc'>fc</span><span class='op'>/</span><span class='id identifier rubyid_iscsi'>iscsi</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='label'>discoverable:</span> <span class='lbracket'>[</span><span class='kw'>true</span><span class='op'>/</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-</code></pre>
-
-<h4 id="label-Add+a+vCenter+Server-3A">Add a vCenter Server:</h4>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_vipr'>vipr</span><span class='period'>.</span><span class='id identifier rubyid_add_vcenter'>add_vcenter</span><span class='lparen'>(</span><span class='id identifier rubyid_fqdn_or_ip'>fqdn_or_ip</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span> <span class='id identifier rubyid_user_name'>user_name</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_ex'>ex</span><span class='period'>.</span> <span class='id identifier rubyid_vipr'>vipr</span><span class='period'>.</span><span class='id identifier rubyid_add_vcenter'>add_vcenter</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vcenter.mycompany.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Company-vCenter</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>443</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CORP\user</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mypassword</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
-
-<h4 id="label-Delete+a+vCenter+Server-3A">Delete a vCenter Server:</h4>
-
-<pre class="code ruby"><code class="ruby">vipr.delete_vcenter(vcenter_id)
-
-ex1. vcenter_id = vipr.get_all_vcenters[&#39;id&#39;][0] 
-or
-ex2. myvc = vipr.find_vcenter_object(&quot;myvc&quot;)
-ex2. vcenter_id = vcenter_id[&#39;resource&#39;][0][&#39;id&#39;]</code></pre>
-
-<h4 id="label-Add+Storage-3A">Add Storage:</h4>
-
-<pre class="code ruby"><code class="ruby"><span class='const'>Will</span> <span class='id identifier rubyid_figure'>figure</span> <span class='id identifier rubyid_out'>out</span> <span class='id identifier rubyid_a'>a</span> <span class='id identifier rubyid_better'>better</span> <span class='id identifier rubyid_way'>way</span> <span class='id identifier rubyid_to'>to</span> <span class='id identifier rubyid_show'>show</span> <span class='id identifier rubyid_each'>each</span> <span class='id identifier rubyid_method'>method</span><span class='op'>...</span> <span class='id identifier rubyid_YARD?'>YARD?</span>
-</code></pre>
-
-<h4 id="label-Methods+that+matter-3A">Methods that matter:</h4>
-
-<p>vipr.add_host(<em>hostObject.generate_json</em>)<br>
-vipr.add_initiators(<em>hostObject.generate_initiators_json</em>,<em>host_href</em>)<br>
-vipr.add_host_and_initators(<em>hostObject</em>)<br>
-vipr.host_exists?(<em>hostObject.name</em>)<br>
-vipr.find_host_object(<em>hostObject.name</em>) vipr.get_all_hosts<br>
-vipr.get_host(<em>host_href</em>)<br> vipr.get_all_hosts<br>
-vipr.deactivate_host(<em>host_href</em>) vipr.add_vcenter(fqdn_or_ip, name,
-port, user_name, password) vipr.delete_vcenter(vcenter_id)</p>
-
-<h4 id="label-Fun+facts">Fun facts</h4>
-
-<p>To get a host href -&gt; <a
-href="'resource'">vipr.find_host_object(host.name)</a>[<a
-href="'link'">0]</a>[&#39;href&#39;]</p>
+<p>For all methods, see the <a href="http://rubygems.org/gems/vipruby">Gem
+Documentation for all code samples</a></p>
 
 <h4 id="label-To+Do-3A">To Do:</h4>
 <ul><li>
-<p>Breakout vipruby.rb into multiple classes and files. Host, Vcenter,
-Storage, Filesystems, Snapshots, etc… it&#39;s already getting large</p>
+<p>Add more methods for more controller specific actions.</p>
 </li><li>
-<p>Add more and more and more things</p>
-</li><li>
-<p>figure out if adding by JSON or XML is easier for future proof.</p>
-</li><li>
-<p>Add documentation via Yard</p>
+<p>Add methods for blob specific actions</p>
 </li></ul>
 </div></div>
 
     <div id="footer">
-  Generated on Mon Dec 15 13:17:37 2014 by
+  Generated on Mon Dec 15 13:52:44 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.2).
 </div>
