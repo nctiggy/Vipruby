@@ -23,16 +23,16 @@ vipr = Vipr.new(base_url,user_name,password,verify_cert)
 
 #### Methods Exist for:
 1. vCenter
-* Add vCenters (to root or specific tenant)
-* Remove vCenters
-* Get vCenter Information
+..* Add vCenters (to root or specific tenant)
+..* Remove vCenters
+..* Get vCenter Information
 2. Hosts
-* Add Hosts
-* Add Host Initators
-* Remove Hosts
-* Get Host Information
+..* Add Hosts
+..* Add Host Initators
+..* Remove Hosts
+..* Get Host Information
 3. Storage Systems
-* Add Storage Arrays
+..* Add Storage Arrays
 
 For all methods, see the [Gem Documentation for all code samples](http://rubygems.org/gems/vipruby)
 
