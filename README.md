@@ -7,9 +7,10 @@
 ## How to use:
 
 #### Install and usage:
+```ruby
 gem install vipruby  
-require 'vipruby'    
-
+require 'vipruby'
+```
 
 #### Create a ViPR object:
 ```ruby
