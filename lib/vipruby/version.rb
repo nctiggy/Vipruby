@@ -2,5 +2,5 @@
 module Vipruby
 
 	# Version of the Gem File
-	VERSION = "0.1.6.1"
+	VERSION = "0.1.7"
 end
