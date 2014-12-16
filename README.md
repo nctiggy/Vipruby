@@ -1,5 +1,8 @@
 [![Gem Version](https://badge.fury.io/rb/vipruby.svg)](http://badge.fury.io/rb/vipruby)  
 
+###This repo has been moved to @emccode
+###Link to new repo: https://github.com/emccode/Vipruby
+
 # ViPRuby
 ### A Ruby library for EMCs ViPR
 ------
