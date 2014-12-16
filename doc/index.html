@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<p><a href="http://badge.fury.io/rb/vipruby"><img
+src="https://badge.fury.io/rb/vipruby.svg"></a></p>
+
+<h1 id="label-ViPRuby">ViPRuby</h1>
+
+<h2 id="label-23-23-23+A+Ruby+library+for+EMCs+ViPR">### A Ruby library for EMCs ViPR</h2>
+
+<h2 id="label-How+to+use-3A">How to use:</h2>
+
+<h4 id="label-Install+and+usage-3A">Install and usage:</h4>
+
+<p>gem install vipruby<br> require &#39;vipruby&#39;</p>
+
+<h4 id="label-Create+a+ViPR+object-3A">Create a ViPR object:</h4>
+
+<pre class="code ruby"><code class="ruby">```ruby
+base_url = &#39;vipr.mydomain.com&#39;
+user_name = &#39;root&#39;
+password = &#39;mypw&#39;
+verify_cert = false
+
+vipr = Vipr.new(base_url,user_name,password,verify_cert)
+```</code></pre>
+
+<h4 id="label-Methods+Exist+for-3A">Methods Exist for:</h4>
+
+<pre class="code ruby"><code class="ruby">1. vCenter
+	* Add vCenters (to root or specific tenant)
+	* Remove vCenters
+	* Get vCenter Information
+2. Hosts
+	* Add Hosts
+	* Add Host Initators
+	* Remove Hosts
+	* Get Host Information
+3. Storage Systems
+	* Add Storage Arrays</code></pre>
+
+<p>For all methods, see the <a href="http://rubygems.org/gems/vipruby">Gem
+Documentation for all code samples</a></p>
+
+<h4 id="label-To+Do-3A">To Do:</h4>
+<ul><li>
+<p>Add more methods for more controller specific actions.</p>
+</li><li>
+<p>Add methods for blob specific actions</p>
+</li></ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Mon Dec 15 13:52:44 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>
