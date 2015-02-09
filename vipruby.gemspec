@@ -7,16 +7,16 @@ Gem::Specification.new do |s|
   s.version     = Vipruby::VERSION
   s.date        = Date.today.to_s
   s.summary     = "A Ruby Library for EMC's ViPR"
-  s.description = "A Ruby implementation to add & gather information from Storage Arrays, vCenter, and Compute Hosts"
+  s.description = "A Ruby implementation to add and gather information from Storage Arrays, vCenter, and Compute Hosts"
   s.authors     = ["Craig J Smith", "Kendrick Coleman"]
-  s.email       = 'nctiggy@gmail.com'
+  s.email       = 'emccode@emc.com'
   s.require_paths = %w[lib]
   s.files         = `git ls-files`.split($/)
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
   s.homepage    =
-    'https://github.com/nctiggy/Vipruby'
+    'https://github.com/emccode/Vipruby'
   s.license       = 'MIT'
   s.add_runtime_dependency "json",
     ["~> 1.8"]
