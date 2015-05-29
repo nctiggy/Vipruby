@@ -3,6 +3,8 @@ require "vipruby/viprbase"
 require "vipruby/objects/vcenter"
 require 'vipruby/objects/storagesystem'
 require 'vipruby/objects/host'
+require 'vipruby/objects/servicecatalog'
+require 'vipruby/objects/tenant'
 
 # The base class for the gem. Every subsequent method relies on creating an object from this class
 class Vipr
@@ -10,6 +12,8 @@ class Vipr
   include ViprVcenter
   include ViprStorageSystem
   include ViprHost
+  include ViprServiceCatalog
+  include ViprTenant
 
   # required params used for almost every single method
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert

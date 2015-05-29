@@ -1,7 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/vipruby.svg)](http://badge.fury.io/rb/vipruby)  
 
 # ViPRuby
-### A Ruby library for EMCs ViPR
+### A Ruby library for EMCs ViPR Controller (ViPR-C) REST API
 ------
 
 ## How to use:
@@ -34,6 +34,16 @@ vipr = Vipr.new(base_url,user_name,password,verify_cert)
    * Get Host Information
 3. Storage Systems
    * Add Storage Arrays
+4. Tenants
+   * Get All Tenants
+   * Get One Tenant Information
+   * Get Subtenants of One Tenant
+   * Get Projects of One Tenant
+5. Service Catalog
+   * Get Root Service Catalog Information
+   * Get Categories of a Catalog
+   * Get Services of a Category of a Catalog
+   * Order A Service
 
 For all methods, see the [Gem Documentation for all code samples](http://rubygems.org/gems/vipruby)
 
