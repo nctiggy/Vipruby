@@ -3,6 +3,163 @@ require 'json'
 
 # The Following Storage System calls will add Storage Systems for all tenants. these commands can only be ran as the root/default tenant
 module ViprStorageSystem
+	# Get All Storage Systems. Gets the id, name, and self link for all registered storage systems.
+	#
+	# @return [json] JSON object of all the Storage Systems.
+	def get_storage_systems(auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systems", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage System information
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System
+	def get_storage_system(storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systems/#{storage_system_id}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Register Storage System. Allows the user register the storage system with the passed id.
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System
+	def storage_system_register(storage_system_id=nil,auth=nil, cert=nil)
+		check_storage_system_id_post(storage_system_id)
+	    payload = {
+	        id: storage_system_id
+	      }.to_json
+	    rest_post(payload, "#{@base_url}/vdc/storage-systems/#{storage_system_id}/register", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Discover Storage System. Allows the user to manually discover the registered storage system with the passed id.
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System
+	def storage_system_discover(storage_system_id=nil,auth=nil, cert=nil)
+		check_storage_system_id_post(storage_system_id)
+	    payload = {
+	        id: storage_system_id
+	      }.to_json
+	    rest_post(payload, "#{@base_url}/vdc/storage-systems/#{storage_system_id}/discover", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Deregister Storage System. Allows the user to deregister a registered storage system so that it is no longer used by the system. This simply sets the registration_status of the storage system to UNREGISTERED
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System
+	def storage_system_deregister(storage_system_id=nil,auth=nil, cert=nil)
+		check_storage_system_id_post(storage_system_id)
+	    payload = {
+	        id: storage_system_id
+	      }.to_json
+	    rest_post(payload, "#{@base_url}/vdc/storage-systems/#{storage_system_id}/deregister", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Deactivate Storage System. Remove a storage system. The method would remove the storage system from the system control and will remove all resources associated with the storage system from the database. Note that resources (pools, ports, volumes, etc.) are not removed from the storage system physically, but become unavailable for the user.
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System
+	def storage_system_deactivate(storage_system_id=nil,auth=nil, cert=nil)
+		check_storage_system_id_post(storage_system_id)
+	    payload = {
+	        id: storage_system_id
+	      }.to_json
+	    rest_post(payload, "#{@base_url}/vdc/storage-systems/#{storage_system_id}/deactivate", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage System Storage Pools
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System Storage Pools
+	def get_storage_system_storage_pools(storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systemss/#{storage_system_id}/storage-pools", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage System Storage Ports
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System Storage Ports
+	def get_storage_system_storage_ports(storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systemss/#{storage_system_id}/storage-ports", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage System Auto-Tier Policies
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System Auto-Tier Policies
+	def get_storage_system_auto_tier_policy(storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systemss/#{storage_system_id}/auto-tier-policies", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage System unmanaged volumes available
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System unmanaged volumes available
+	def get_storage_system_unmanaged_volumes(storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systemss/#{storage_system_id}/unmanaged/volumes", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage System unmanaged filesystems available
+	#
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage System unmanaged filesystems available
+	def get_storage_system_unmanaged_filesystems(storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-systemss/#{storage_system_id}/unmanaged/filesystems", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get All Storage Providers. Gets the id, name, and self link for all registered storage providers.
+	#
+	# @return [json] JSON object of all the Storage Providers.
+	def get_storage_providers(auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-providers", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage Provider information
+	#
+	# @param storage_provider_id [urn:id] URN of a Storage Provider. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage Provider
+	def get_storage_provider(storage_provider_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-providers/#{storage_provider_id}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage Provider Storage Systems information
+	#
+	# @param storage_provider_id [urn:id] URN of a Storage Provider. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage Provider Storage Systems
+	def get_storage_provider_storage_systems(storage_provider_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-providers/#{storage_provider_id}/storage-systems", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage Provider Storage System information
+	#
+	# @param storage_provider_id [urn:id] URN of a Storage Provider. Required Param
+	# @param storage_system_id [urn:id] URN of a Storage System. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage Provider Storage Systems
+	def get_storage_provider_storage_system(storage_provider_id, storage_system_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-providers/#{storage_provider_id}/storage-systems/#{storage_system_id}", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
+	# Get single Storage Provider Tasks information
+	#
+	# @param storage_provider_id [urn:id] URN of a Storage Provider. Required Param
+	#
+	# @return [JSON] The JSON object of the Storage Provider Tasks
+	def get_storage_provider_tasks(storage_provider_id,auth=nil, cert=nil)
+		rest_get("#{@base_url}/vdc/storage-providers/#{storage_provider_id}/tasks", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
+	end
+
 	# JSON Structure for creating the payload for Storage Providers
 	#
 	# @param name [String] Name of the Storage Provider. This name is arbitrary and only exists within ViPR. This is a required string.
@@ -274,5 +431,17 @@ module ViprStorageSystem
           raise "Missing Param 'name' or 'ip_or_dns'"
       end
     end
+
+    # Error Handling method to check for Missing Storage System ID param. If the pass fails, an error exception is raised
+	#
+	# @param storage_system_id [String] Requires the string of the storage_system_id uid [urn]
+	# @return [Boolean] True if pass, false if it fails
+	#
+	# @private
+	def check_storage_system_id_post(storage_system_id=nil)
+	  if storage_system_id == nil
+	      raise "Missing param (storage_system_id)"
+	  end
+	end
 
 end
