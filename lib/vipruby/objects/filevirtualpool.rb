@@ -45,15 +45,6 @@ module ViprFileVirtualPool
 		rest_get("#{@base_url}/file/vpools/#{file_vpool_id}/refresh-matched-pools", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
 	end
 
-	# Get Single File Virtual Pool ACL information
-	#
-	# @param file_vpool_id [urn:id] URN of a File Virtual Pool. Required Param
-	#
-	# @return [JSON] The JSON object of the File Virtual Pool ACL
-	def get_file_vpool_acl(file_vpool_id,auth=nil, cert=nil)
-		rest_get("#{@base_url}/file/vpools/#{file_vpool_id}/acl", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
-	end
-
 	# Deactivate File Virtual Pool. Deactivate file store virtual pool, this will move the virtual pool to a "marked-for-deletion" state, and no more resource may be created using it. The virtual pool will be deleted when all references to this virtual pool of type Volume are deleted
 	#
 	# @param file_vpool_id [urn:id] URN of a File Virtual Pool. Required Param

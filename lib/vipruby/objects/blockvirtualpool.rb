@@ -45,15 +45,6 @@ module ViprBlockVirtualPool
 		rest_get("#{@base_url}/block/vpools/#{block_vpool_id}/refresh-matched-pools", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
 	end
 
-	# Get Single Block Virtual Pool ACL information
-	#
-	# @param block_vpool_id [urn:id] URN of a Block Virtual Pool. Required Param
-	#
-	# @return [JSON] The JSON object of the Block Virtual Pool ACL
-	def get_block_vpool_acl(block_vpool_id,auth=nil, cert=nil)
-		rest_get("#{@base_url}/block/vpools/#{block_vpool_id}/acl", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
-	end
-
 	# Deactivate Block Virtual Pool. Deactivate block store virtual pool, this will move the virtual pool to a "marked-for-deletion" state, and no more resource may be created using it. The virtual pool will be deleted when all references to this virtual pool of type Volume are deleted
 	#
 	# @param block_vpool_id [urn:id] URN of a Block Virtual Pool. Required Param

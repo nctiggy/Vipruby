@@ -23,7 +23,7 @@ module ViprStoragePool
 	# @param storage_pool_id [urn:id] URN of a StoragePool. Required Param
 	#
 	# @return [JSON] The JSON object of the StoragePool Storage-Tiers
-	def get_storage_pool(storage_pool_id,auth=nil, cert=nil)
+	def get_storage_pool_storage_tiers(storage_pool_id,auth=nil, cert=nil)
 		rest_get("#{@base_url}/vdc/storage-pools/#{storage_pool_id}/storage-tiers", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
 	end
 
@@ -32,7 +32,7 @@ module ViprStoragePool
 	# @param storage_pool_id [urn:id] URN of a StoragePool. Required Param
 	#
 	# @return [JSON] The JSON object of the StoragePool Resources
-	def get_storage_pool(storage_pool_id,auth=nil, cert=nil)
+	def get_storage_pool_resources(storage_pool_id,auth=nil, cert=nil)
 		rest_get("#{@base_url}/vdc/storage-pools/#{storage_pool_id}/resources", auth.nil? ? @auth_token : auth, cert.nil? ? @verify_cert : cert)
 	end
 
