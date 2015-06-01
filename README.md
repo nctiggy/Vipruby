@@ -125,7 +125,6 @@ We are actively looking for contributors to this project. This can involve any n
 Fork it, Send a Pull Request, We'll Merge It
 
 ## Licensing
-Copyright © 2015 , EMC Corporation
 ViPRuby is freely distributed under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
 
 ##Support
