@@ -110,7 +110,7 @@ vipr = Vipr.new(base_url,user_name,password,verify_cert)
    * Get Single Virtual Data Center
    * Get Virtual Data Centers Secret Key
 
-#### See the [Gem Documentation for all code samples](http://rubygems.org/gems/vipruby) for all methods and examples
+#### See the [Gem Documentation](http://rubygems.org/gems/vipruby) for all methods and examples
 
 ## To Do:
 * Add more methods for more controller specific actions
