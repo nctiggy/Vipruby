@@ -115,10 +115,18 @@ vipr = Vipr.new(base_url,user_name,password,verify_cert)
 ## To Do:
 * Add more methods for more controller specific actions
 
-## Licensing
-Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+## Contribute
+We are actively looking for contributors to this project. This can involve any number of area.
+  * Documentation
+  * More Controller Methods
+  * Refine the current methods
+  * Unit Tests, well, any testing at all!
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License
+Fork it, Send a Pull Request, We'll Merge It
+
+## Licensing
+Copyright © 2015 , EMC Corporation
+ViPRuby is freely distributed under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
 
 ##Support
 Please file bugs and issues at the [Github issues page](https://github.com/emccode/Vipruby/issues). For more general discussions you can contact the EMC Code team at [Google Groups](https://groups.google.com/forum/#!forum/emccode-users "EMC Code Users") or tagged with *EMC* on [StackOverflow.com](https://stackoverflow.com/). The code and documentation are released with no warranties or SLAs and are intended to be supported through a community driven process.
