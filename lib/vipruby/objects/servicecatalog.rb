@@ -55,6 +55,10 @@ module ViprServiceCatalog
     #   x = vipr.get_tenants
     #   xid = vipr.get_tenant(id['id'][0])
     #   vipr.order_service(xid, "urn:theServiceYouWantToExecute", {"label" => "All", "friendly" => "Of"}, {"label" => "The", "friendly" => "Required"}, {"label" => "Params", "friendly" => "GotIt?"})
+    #
+ 	# @note 
+ 	# 	Please read the documentation to know what parameters are needed when passing the JSON object. Every service
+ 	# 	will have it's own set of parameters and they are unique to each service
 	def order_service(tenant_id, service_urn, *args)
 		payload = {
             tenantId: tenant_id,

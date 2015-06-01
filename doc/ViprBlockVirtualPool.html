@@ -1,0 +1,859 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ViprBlockVirtualPool
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ViprBlockVirtualPool.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (V)</a> &raquo;
+    
+    
+    <span class="title">ViprBlockVirtualPool</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ViprBlockVirtualPool
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="Vipr.html" title="Vipr (class)">Vipr</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/vipruby/objects/blockvirtualpool.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The following Block Virtual Pool calls will get and execute Block Virtual
+Pool items</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#block_vpool_deactivate-instance_method" title="#block_vpool_deactivate (instance method)">- (JSON) <strong>block_vpool_deactivate</strong>(block_vpool_id = nil, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deactivate Block Virtual Pool.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#check_block_vpool_id_post-instance_method" title="#check_block_vpool_id_post (instance method)">- (Boolean) <strong>check_block_vpool_id_post</strong>(block_vpool_id = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Error Handling method to check for Block Virtual Pool ID param.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_block_vpool-instance_method" title="#get_block_vpool (instance method)">- (JSON) <strong>get_block_vpool</strong>(block_vpool_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get Single Block Virtual Pool information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_block_vpool_acl-instance_method" title="#get_block_vpool_acl (instance method)">- (JSON) <strong>get_block_vpool_acl</strong>(block_vpool_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get Single Block Virtual Pool ACL information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_block_vpool_refresh_matched_pools-instance_method" title="#get_block_vpool_refresh_matched_pools (instance method)">- (JSON) <strong>get_block_vpool_refresh_matched_pools</strong>(block_vpool_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Regresh Single Block Virtual Pool Matched Pools information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_block_vpool_storage_pools-instance_method" title="#get_block_vpool_storage_pools (instance method)">- (JSON) <strong>get_block_vpool_storage_pools</strong>(block_vpool_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get Single Block Virtual Pool Storage Pools information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_block_vpools-instance_method" title="#get_block_vpools (instance method)">- (json) <strong>get_block_vpools</strong>(auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get All Block Virtual Pools.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="block_vpool_deactivate-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>block_vpool_deactivate</strong>(block_vpool_id = nil, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deactivate Block Virtual Pool. Deactivate block store virtual pool, this
+will move the virtual pool to a “marked-for-deletion” state, and no more
+resource may be created using it. The virtual pool will be deleted when all
+references to this virtual pool of type Volume are deleted</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block_vpool_id</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a Block Virtual Pool. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the Block Virtual Pool</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_block_vpool_deactivate'>block_vpool_deactivate</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_check_block_vpool_id_post'>check_block_vpool_id_post</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+        <span class='label'>id:</span> <span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span>
+      <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+    <span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/block/vpools/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/deactivate</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_block_vpool_id_post-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>check_block_vpool_id_post</strong>(block_vpool_id = nil)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Error Handling method to check for Block Virtual Pool ID param. If the pass
+fails, an error exception is raised</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block_vpool_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Requires the string of the block_vpool_id uid</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if pass, false if it fails</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_block_vpool_id_post'>check_block_vpool_id_post</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span> <span class='op'>==</span> <span class='kw'>nil</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing param (block_vpool_id)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_block_vpool-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_block_vpool</strong>(block_vpool_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get Single Block Virtual Pool information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block_vpool_id</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a Block Virtual Pool. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the Block Virtual Pool</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_block_vpool'>get_block_vpool</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/block/vpools/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_block_vpool_acl-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_block_vpool_acl</strong>(block_vpool_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get Single Block Virtual Pool ACL information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block_vpool_id</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a Block Virtual Pool. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the Block Virtual Pool ACL</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_block_vpool_acl'>get_block_vpool_acl</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/block/vpools/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/acl</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_block_vpool_refresh_matched_pools-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_block_vpool_refresh_matched_pools</strong>(block_vpool_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Regresh Single Block Virtual Pool Matched Pools information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block_vpool_id</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a Block Virtual Pool. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the Block Virtual Pool Storage Pools</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_block_vpool_refresh_matched_pools'>get_block_vpool_refresh_matched_pools</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/block/vpools/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/refresh-matched-pools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_block_vpool_storage_pools-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_block_vpool_storage_pools</strong>(block_vpool_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get Single Block Virtual Pool Storage Pools information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block_vpool_id</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a Block Virtual Pool. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the Block Virtual Pool Storage Pools</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_block_vpool_storage_pools'>get_block_vpool_storage_pools</span><span class='lparen'>(</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/block/vpools/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_block_vpool_id'>block_vpool_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/storage-pools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_block_vpools-instance_method">
+  
+    - (<tt>json</tt>) <strong>get_block_vpools</strong>(auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get All Block Virtual Pools</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>json</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>JSON object of all the Block Virtual Pools</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/blockvirtualpool.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_block_vpools'>get_block_vpools</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/block/vpools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Jun  1 15:10:33 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>

@@ -1,20 +1,36 @@
 
 require "vipruby/viprbase"
-require "vipruby/objects/vcenter"
-require 'vipruby/objects/storagesystem'
+require 'vipruby/objects/autotier'
+require 'vipruby/objects/blockvirtualpool'
+require 'vipruby/objects/filevirtualpool'
 require 'vipruby/objects/host'
 require 'vipruby/objects/servicecatalog'
+require 'vipruby/objects/storagepool'
+require 'vipruby/objects/storageport'
+require 'vipruby/objects/storagesystem'
+require 'vipruby/objects/storagetier'
 require 'vipruby/objects/tenant'
+require "vipruby/objects/vcenter"
+require 'vipruby/objects/virtualarray'
+require 'vipruby/objects/virtualdatacenter'
 
 # The base class for the gem. Every subsequent method relies on creating an object from this class
 class Vipr
   include ViprBase
-  include ViprVcenter
-  include ViprStorageSystem
+  include ViprAutoTier
+  include ViprBlockVirtualPool
+  include ViprFileVirtualPool
   include ViprHost
   include ViprServiceCatalog
+  include ViprStoragePool
+  include ViprStoragePort
+  include ViprStorageSystem
+  include ViprStorageTier
   include ViprTenant
-
+  include ViprVcenter
+  include ViprVirtualArray
+  include ViprVirtualDataCenter
+  
   # required params used for almost every single method
   attr_accessor :tenant_uid, :auth_token, :base_url, :verify_cert
   

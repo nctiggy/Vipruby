@@ -252,12 +252,7 @@ items</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>x = vipr.get_tenants   xid = <a href="'id'">vipr.get_tenant(id</a>[0])  
-vipr.order_service(xid, “urn:theServiceYouWantToExecute”, =&gt;
-“All”, “friendly” =&gt; “Of”, =&gt; “The”, “friendly” =&gt;
-“Required”, =&gt; “Params”, “friendly” =&gt; “GotIt?”).</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -662,11 +657,15 @@ vipr.order_service(xid, “urn:theServiceYouWantToExecute”, =&gt;
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>x = vipr.get_tenants</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Please read the documentation to know what parameters are needed when
+passing the JSON object. Every service will have it&#39;s own set of
+parameters and they are unique to each service</p>
+</div>
+  </div>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_xid'>xid</span> <span class='op'>=</span> <span class='id identifier rubyid_vipr'>vipr</span><span class='period'>.</span><span class='id identifier rubyid_get_tenant'>get_tenant</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_vipr'>vipr</span><span class='period'>.</span><span class='id identifier rubyid_order_service'>order_service</span><span class='lparen'>(</span><span class='id identifier rubyid_xid'>xid</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>urn:theServiceYouWantToExecute</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>label</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>All</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>friendly</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Of</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>label</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>friendly</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Required</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>label</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Params</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>friendly</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GotIt?</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
-</code></pre>
 
 
   </div>
@@ -680,18 +679,18 @@ vipr.order_service(xid, “urn:theServiceYouWantToExecute”, =&gt;
       <pre class="lines">
 
 
-58
-59
-60
-61
 62
 63
 64
 65
-66</pre>
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/servicecatalog.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/servicecatalog.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_order_service'>order_service</span><span class='lparen'>(</span><span class='id identifier rubyid_tenant_id'>tenant_id</span><span class='comma'>,</span> <span class='id identifier rubyid_service_urn'>service_urn</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -772,12 +771,12 @@ Param</p>
       <pre class="lines">
 
 
-74
-75
-76</pre>
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/servicecatalog.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/servicecatalog.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post_order_service'>post_order_service</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span><span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_rest_post'>rest_post</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_url'>base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/catalog/orders</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
@@ -792,7 +791,7 @@ Param</p>
 </div>
 
     <div id="footer">
-  Generated on Fri May 29 15:49:21 2015 by
+  Generated on Mon Jun  1 15:10:33 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.2).
 </div>

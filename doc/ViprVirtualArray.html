@@ -1,0 +1,1230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ViprVirtualArray
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ViprVirtualArray.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (V)</a> &raquo;
+    
+    
+    <span class="title">ViprVirtualArray</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ViprVirtualArray
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="Vipr.html" title="Vipr (class)">Vipr</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/vipruby/objects/virtualarray.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The following Virtual Array calls will get and execute virtual array items</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray-instance_method" title="#get_varray (instance method)">- (JSON) <strong>get_varray</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_acl-instance_method" title="#get_varray_acl (instance method)">- (JSON) <strong>get_varray_acl</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray ACL.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_attributes-instance_method" title="#get_varray_attributes (instance method)">- (JSON) <strong>get_varray_attributes</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray available attributes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_autotier_policy-instance_method" title="#get_varray_autotier_policy (instance method)">- (JSON) <strong>get_varray_autotier_policy</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray Auto-Tier Policy.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_connectivity-instance_method" title="#get_varray_connectivity (instance method)">- (JSON) <strong>get_varray_connectivity</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray Connectivity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_networks-instance_method" title="#get_varray_networks (instance method)">- (JSON) <strong>get_varray_networks</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray Networks.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_storage_pools-instance_method" title="#get_varray_storage_pools (instance method)">- (JSON) <strong>get_varray_storage_pools</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray Storage Pools.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_storage_ports-instance_method" title="#get_varray_storage_ports (instance method)">- (JSON) <strong>get_varray_storage_ports</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray Storage Ports.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varray_virtual_pools-instance_method" title="#get_varray_virtual_pools (instance method)">- (JSON) <strong>get_varray_virtual_pools</strong>(varray_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualArray Virtual Pools.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_varrays-instance_method" title="#get_varrays (instance method)">- (json) <strong>get_varrays</strong>(auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get/List VirtualArrays in zone.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search_varrays-instance_method" title="#search_varrays (instance method)">- (json) <strong>search_varrays</strong>(auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Search VirtualArrays.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_varray-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray'>get_varray</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_acl-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_acl</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray ACL</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray ACL</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_acl'>get_varray_acl</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/acl</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_attributes-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_attributes</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray available attributes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray available attributes</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_attributes'>get_varray_attributes</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/available-attributes</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_autotier_policy-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_autotier_policy</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray Auto-Tier Policy</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray Auto-Tier Policy</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_autotier_policy'>get_varray_autotier_policy</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/auto-tier-policies</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_connectivity-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_connectivity</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray Connectivity</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray Connectivity</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_connectivity'>get_varray_connectivity</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/connectivity</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_networks-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_networks</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray Networks</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray Networks</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_networks'>get_varray_networks</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/networks</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_storage_pools-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_storage_pools</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray Storage Pools</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray Storage Pools</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_storage_pools'>get_varray_storage_pools</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/storage-pools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_storage_ports-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_storage_ports</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray Storage Ports</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray Storage Ports</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_storage_ports'>get_varray_storage_ports</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/storage-ports</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varray_virtual_pools-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_varray_virtual_pools</strong>(varray_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualArray Virtual Pools</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>varray</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualArray. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualArray Virtual Pools</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varray_virtual_pools'>get_varray_virtual_pools</span><span class='lparen'>(</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_varray_id'>varray_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vpools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_varrays-instance_method">
+  
+    - (<tt>json</tt>) <strong>get_varrays</strong>(auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get/List VirtualArrays in zone</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>json</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>JSON object of all the VirtualArrays in zone</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_varrays'>get_varrays</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="search_varrays-instance_method">
+  
+    - (<tt>json</tt>) <strong>search_varrays</strong>(auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Search VirtualArrays</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>json</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>JSON object of all the VirtualArrays in zone</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualarray.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_search_varrays'>search_varrays</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/varrays/search</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Jun  1 15:10:33 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>

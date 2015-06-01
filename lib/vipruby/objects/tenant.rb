@@ -1,6 +1,6 @@
 require 'json'
 
-# The following Servce Catalog calls will get and execute service catalog items
+# The following Tenant calls will get and execute tenant items
 module ViprTenant
 	# Get tenants
 	#

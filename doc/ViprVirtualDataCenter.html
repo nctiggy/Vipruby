@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ViprVirtualDataCenter
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ViprVirtualDataCenter.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (V)</a> &raquo;
+    
+    
+    <span class="title">ViprVirtualDataCenter</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ViprVirtualDataCenter
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="Vipr.html" title="Vipr (class)">Vipr</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/vipruby/objects/virtualdatacenter.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The following VirtualDataCenter calls will get and execute
+VirtualDataCenter items</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_vdc-instance_method" title="#get_vdc (instance method)">- (JSON) <strong>get_vdc</strong>(vdc_id, auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualDataCenter information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_vdc_secretkey-instance_method" title="#get_vdc_secretkey (instance method)">- (JSON) <strong>get_vdc_secretkey</strong>(auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get single VirtualDataCenter Secret-Key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_vdcs-instance_method" title="#get_vdcs (instance method)">- (json) <strong>get_vdcs</strong>(auth = nil, cert = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get All VirtualDataCenters.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_vdc-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_vdc</strong>(vdc_id, auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualDataCenter information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>vdc_id</span>
+      
+      
+        <span class='type'>(<tt>urn:id</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>URN of a VirtualDatacenter. Required Param</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualDataCenter</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualdatacenter.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_vdc'>get_vdc</span><span class='lparen'>(</span><span class='id identifier rubyid_vdc_id'>vdc_id</span><span class='comma'>,</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vdc_id'>vdc_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_vdc_secretkey-instance_method">
+  
+    - (<tt>JSON</tt>) <strong>get_vdc_secretkey</strong>(auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get single VirtualDataCenter Secret-Key</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>JSON</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JSON object of the VirtualDataCenter Secret-Key</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualdatacenter.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_vdc_secretkey'>get_vdc_secretkey</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc/secret-key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_vdcs-instance_method">
+  
+    - (<tt>json</tt>) <strong>get_vdcs</strong>(auth = nil, cert = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get All VirtualDataCenters</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>json</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>JSON object of all the VirtualDataCenters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/vipruby/objects/virtualdatacenter.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_vdcs'>get_vdcs</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_rest_get'>rest_get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@base_url</span><span class='embexpr_end'>}</span><span class='tstring_content'>/vdc</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@auth_token</span> <span class='op'>:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='id identifier rubyid_cert'>cert</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='ivar'>@verify_cert</span> <span class='op'>:</span> <span class='id identifier rubyid_cert'>cert</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Jun  1 15:10:33 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>
