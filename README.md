@@ -128,4 +128,5 @@ Fork it, Send a Pull Request, We'll Merge It
 ViPRuby is freely distributed under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
 
 ##Support
-Please file bugs and issues at the [Github issues page](https://github.com/emccode/Vipruby/issues). For more general discussions you can contact the EMC Code team at [Google Groups](https://groups.google.com/forum/#!forum/emccode-users "EMC Code Users") or tagged with *EMC* on [StackOverflow.com](https://stackoverflow.com/). The code and documentation are released with no warranties or SLAs and are intended to be supported through a community driven process.
+Please file bugs and issues at the [Github issues page](https://github.com/emccode/Vipruby/issues). This is to help keep track and document everything related to this repo. For general discussions and further support you can join the [EMC {code} Community slack channel](http://community.emccode.com/). Lastly, for questions asked on [Stackoverflow.com](https://stackoverflow.com) please tag them with **EMC**. The code and documentation are released with no warranties or SLAs and are intended to be supported through a community driven process.
+
